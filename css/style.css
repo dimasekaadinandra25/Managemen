@@ -63,6 +63,18 @@ body{
     color: rgb(10, 167, 230);
 }
 
+.icon{
+    float: left;
+    background-color : yellow;
+    padding: 8px 11px;
+    border-radius: 5px 0 0 5px;
+}
+
+.form{
+    float: left;
+    
+}
+
 @media (max-width: 380px){
     .footer .content-1,
     .footer .content-2{
