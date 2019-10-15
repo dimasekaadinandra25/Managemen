@@ -20,13 +20,67 @@ body{
     display: flex;
     justify-content: center;
     background-color: rgba(36, 36, 41, 0.8);
-    padding: 0 20px;
+    padding: 0 20px 0px 20px;
 }
 
 .title{
     color: white;
-    padding-top: 10px;
+    padding-top: 50px;
     font-size: 20px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    padding: 15px 10px 10px 10px;
+    background: #FFC312;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .input-field:focus {
+    border: 2px solid #FFC312;
+  }
+
+.remember{
+    color: white;
+}
+    
+.remember input{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    height: 50px;
+}
+    
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.warning{
+    color: red;
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: center;
 }
 
 .footer{
@@ -61,18 +115,6 @@ body{
 
 .footer .content-2 .fa-twitter{
     color: rgb(10, 167, 230);
-}
-
-.icon{
-    float: left;
-    background-color : yellow;
-    padding: 8px 11px;
-    border-radius: 5px 0 0 5px;
-}
-
-.form{
-    float: left;
-    
 }
 
 @media (max-width: 380px){
