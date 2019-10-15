@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../toko.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container{
+    height: 100vh;
+    padding: 0 50px;
+}
+
+.card{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(36, 36, 41, 0.8);
+    padding: 0 20px;
+}
+
+.title{
+    color: white;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(92, 25, 25);
+    width: 100%;
+    color: white;
+    box-sizing: border-box;
+}
+
+.footer .content-1{
+    float: left;
+    margin: 10px 15px;
+}
+
+.footer .content-2{
+    float: right;
+    padding-right: 20px;
+    margin: 10px 10px;
+}
+
+.footer .content-2 .fab{
+    padding-left: 10px;
+    font-size: 23px;
+}
+
+.footer .content-2 .fa-instagram{
+    color: rgb(214, 51, 173);
+}
+
+.footer .content-2 .fa-twitter{
+    color: rgb(10, 167, 230);
+}
+
+@media (max-width: 380px){
+    .footer .content-1,
+    .footer .content-2{
+        width: 100%;
+    }
+
+    .footer .content-2{
+        float: left;
+    }
+}
