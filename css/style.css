@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #D8D5C3;
+}
+
+.sidebar{
+    height:100%;
+    width:350px;
+    background-color:#fff;
+    position:fixed!important;
+    z-index:1;
+    overflow:auto;
+    background: rgb(194, 160, 160);
+    display: none;
+}
+
+.w3-sidebar {
+    background-color: #581E1E;
+}
+
+.bar-item{
+    width:100%;
+    display:block;
+    padding:8px 16px;
+    text-align:left;
+    border:none;
+    white-space:normal;
+    float:none;
+    outline:0;
+    cursor: pointer;
+}
+
+.navbar{
+    position: relative;
+}
+
+.navbar .bars{
+    padding: 10px 8px;
+    font-size: 25px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.title{
+    float: none;
+    text-align: center;
+    width: 100%;
+    padding: 0 70px;
+}
+
+.title .title_toko{
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+
+.title .jalan{
+    font-size: 12px;
+    color: red;
+}
+
+p{
+    margin: 0;
+}
+
+.background-white{
+    background: whitesmoke;
+}
