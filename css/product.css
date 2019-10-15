@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.navbar .bars{
+    padding: 10px 8px;
+    font-size: 25px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    background-color: whitesmoke;
+}
+
+.title .title_toko{
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.link{
+    margin: 0;
+    margin-top: 25px;
+    font-weight: bold;
+}
+  
+.icon {
+    padding: 15px 10px 10px 10px;
+    background: #FFC312;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+  
+.input-field:focus {
+    border: 2px solid #FFC312;
+}
+
+.column-1{
+    width: 5%;
+}
+
+.column-2{
+    width: 30%;
+}
+
+.column-3, .column-4, .column-5, .column-6{
+    width: 10%;
+}
+
+.column-6 i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(92, 25, 25);
+    width: 100%;
+    color: white;
+    box-sizing: border-box;
+}
+
+.footer .content-1{
+    float: left;
+    margin: 10px 15px;
+}
+
+.footer .content-2{
+    float: right;
+    padding-right: 20px;
+    margin: 10px 10px;
+}
+
+.footer .content-2 .fab{
+    padding-left: 10px;
+    font-size: 23px;
+}
+
+.footer .content-2 .fa-instagram{
+    color: rgb(214, 51, 173);
+}
+
+.footer .content-2 .fa-twitter{
+    color: rgb(10, 167, 230);
+}
+
+@media (max-width: 380px){
+    .footer .content-1,
+    .footer .content-2{
+        width: 100%;
+    }
+
+    .footer .content-2{
+        float: left;
+    }
+}
+
+@media (max-width: 1220px){
+    .column-5{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px){
+    .column-4{
+        display: none;
+    }
+}
+
+@media (max-width: 770px){
+    .column-3{
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    .input-container{
+        width: 80%;
+        margin: 10px 0 0 50px;
+    }
+
+    .link{
+        margin-left: 50px;
+    }
+
+    .table{
+        
+    }
+}
