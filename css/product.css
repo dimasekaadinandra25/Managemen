@@ -103,7 +103,9 @@
 }
 
 .footer .content-2 .fa-instagram{
-    color: rgb(214, 51, 173);
+    background: linear-gradient(to bottom, rgb(91, 3, 255), rgb(204, 0, 255), yellow);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .footer .content-2 .fa-twitter{
