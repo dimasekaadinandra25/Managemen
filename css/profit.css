@@ -132,8 +132,13 @@
     text-align: center;
 }
 
-.column-3, .column-4, .column-5, .column-6{
+.column-3, .column-4, .column-5{
     width: 10%;
+    text-align: center;
+}
+
+.column-6{
+    width: 15%;
     text-align: center;
 }
 
@@ -179,7 +184,7 @@
 }
 
 .modal-content{
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(110, 13, 13, 0.74);
 }
 
 .modal-title{
@@ -203,6 +208,51 @@
     margin-top: 100px;
 }
 
+.text-centered{
+    text-align: center;
+}
+
+.sold{
+    background-color: palevioletred;
+    color: white;
+    width: 60px;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+.buy{
+    width: 60px;
+    padding: 0 5px;
+    border-radius: 2px;
+    border: .5px solid black;
+}
+
+.sold-title{
+    float:left;
+    margin-top: 5px;
+    margin-left: 20px;
+    text-align: center;
+    width: 20%;
+}
+
+.sold-input{
+    float: left;
+    width: 60%;
+}
+
+.buy-title{
+    float:left;
+    margin-top: 5px;
+    margin-left: 10px;
+    text-align: center;
+    width: 20%;
+}
+
+.buy-input{
+    float: left;
+    width: 70%;
+}
+
 @media (max-width: 380px){
     .footer .content-1,
     .footer .content-2{
@@ -224,6 +274,11 @@
     .column-4{
         display: none;
     }
+
+    .buy,
+    .sold{
+        width: 70%;
+    }
 }
 
 @media (max-width: 770px){
@@ -244,5 +299,33 @@
 
     .modal-content{
         margin-top: 30px;
+        height: 450px;
+    }
+
+    .sold-input{
+        margin-top: 45px;
+    }
+
+    .buy-input{
+        margin-top: 45px;
+        width: 60%;
+    }
+
+    .buy-title{
+        margin-top: 50px;
+        margin-left: 0;
+        width: 35%;
+    }
+
+    .sold-title{
+        margin-top: 50px;
+    }
+
+    .modal{
+        margin: 60px 50px 0px 50px;
+    }
+
+    .modal-image img{
+        height: 100px;
     }
 }

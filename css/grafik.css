@@ -92,54 +92,68 @@
     font-weight: bold;
 }
 
-.input-container {
-    display: flex;
+.barang-baru{
+    border: 1px rgb(5, 192, 5) solid;
+    margin-top: 20px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgb(5, 192, 5);
+}
+
+.set-title{
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.set-icon{
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 50px;
+    color: white;
+}
+
+.set-sub-title{
+    float: right;
+    margin-top: 15px;
+    margin-right: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+#chartPembelian{
+    height: 300px; 
     width: 100%;
-    margin-bottom: 15px;
+    margin: 40px 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px silver;
 }
 
-.link{
-    margin-top: 25px;
-    font-weight: bold;
-}
-  
-.icon {
-    padding: 15px 10px 10px 10px;
-    background: #FFC312;
-    color: black;
-    min-width: 50px;
-    text-align: center;
-    cursor: pointer;
-}
-  
-.input-field {
+#myChart{
     width: 100%;
-    padding: 10px;
-    outline: none;
-}
-  
-.input-field:focus {
-    border: 2px solid #FFC312;
-}
-
-.column-1{
-    width: 5%;
-    text-align: center;
+    height: 300px;
+    margin: 40px 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px silver;
 }
 
-.column-2{
-    width: 30%;
-    text-align: center;
+.penjualan{
+    border: 1px rgb(252, 47, 47) solid;
+    margin-top: 20px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgb(252, 47, 47);
 }
 
-.column-3, .column-4, .column-5, .column-6{
-    width: 10%;
-    text-align: center;
-}
-
-.column-6 i{
-    font-size: 25px;
-    cursor: pointer;
+.pembelian{
+    border: 1px rgb(46, 46, 255) solid;
+    margin-top: 20px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgb(46, 46, 255);
 }
 
 .footer{
@@ -178,31 +192,6 @@
     color: rgb(10, 167, 230);
 }
 
-.modal-content{
-    background-color: rgba(0,0,0,0.9);
-}
-
-.modal-title{
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-}
-
-.modal-image img{
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: auto;
-    width: 50%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.mt-10{
-    margin-top: 100px;
-}
-
 @media (max-width: 380px){
     .footer .content-1,
     .footer .content-2{
@@ -211,38 +200,5 @@
 
     .footer .content-2{
         float: left;
-    }
-}
-
-@media (max-width: 1220px){
-    .column-5{
-        display: none;
-    }
-}
-
-@media (max-width: 1000px){
-    .column-4{
-        display: none;
-    }
-}
-
-@media (max-width: 770px){
-    .column-3{
-        display: none;
-    }
-}
-
-@media (max-width: 585px){
-    .input-container{
-        width: 80%;
-        margin: 10px 0 0 50px;
-    }
-
-    .link{
-        margin-left: 50px;
-    }
-
-    .modal-content{
-        margin-top: 30px;
     }
 }
