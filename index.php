@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <title>Data Management</title>
@@ -19,12 +19,12 @@
             <div class="container">
                 <div class="row mt-5 size-20">
                     <div class="col-sm-12">
-                        <a href="login.html"><p>LOGIN ADMIN <i class="fas fa-chevron-right ml-3"></i></p></a>
+                        <a href="login.php"><p>LOGIN ADMIN <i class="fas fa-chevron-right ml-3"></i></p></a>
                     </div>
                 </div>
                 <div class="row size-20">
                     <div class="col-sm-12">
-                        <a href="about.html"><p>ABOUT ME <i class="fas fa-chevron-right ml-5"></i></p></a>
+                        <a href="about.php"><p>ABOUT ME <i class="fas fa-chevron-right ml-5"></i></p></a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
         <div class="row text-center" id="myTable">
 			<div class="col-md-3">
 				<div class="product-top">
-				    <img src="../img/ItemUser/Tcoklat.jpg" width="300px" height="230px">
+				    <img src="img/ItemUser/Tcoklat.jpg" width="300px" height="230px">
 				    <div class="product-bottom text-center">
                         <p class="size-20">Tango 130 GR <float class="div1">21</float></p>
                         <h5>Rp.5.000 /item</h5>
@@ -68,7 +68,7 @@
             </div>
 			<div class="col-md-3">
 				<div class="product-top">
-				    <img src="../img/ItemUser/Aqua.jpg" width="300px" height="230px">
+				    <img src="img/ItemUser/Aqua.jpg" width="300px" height="230px">
 				</div>
 				<div class="product-bottom text-center">
                     <p class="size-20">Aqua 600 ML <float class="div1">7</float></p>
@@ -77,7 +77,7 @@
 			</div>
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="../img/ItemUser/sold.jpg" width="300px" height="230px">
+				<img src="img/ItemUser/sold.jpg" width="300px" height="230px">
 				</div>
 				<div class="product-bottom text-center">
                     <p class="size-20">lifebuoy <float class="div1">0</float></p>
@@ -87,7 +87,7 @@
 			</div>
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="../img/ItemUser/Bedak.jpg" width="300px" height="230px">
+				<img src="img/ItemUser/Bedak.jpg" width="300px" height="230px">
 				</div>
 				<div class="product-bottom text-center">
                     <p class="size-20">Cussons 200G <float class="div1">1</float></p>
@@ -104,7 +104,7 @@
                 <i class="fab fa-twitter"></i>
             </p>
         </div>
-        <script src="../js/javascript.js"></script>
+        <script src="js/javascript.js"></script>
         <script>
             function myFunction() {
                 var input, filter, row, tr, td, i, txtValue;

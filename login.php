@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" href="../css/style_login.css">
+        <link rel="stylesheet" href="css/style_login.css">
     </head>
     <body>
         <div class="navbar">
@@ -43,10 +43,9 @@
                                     <input type="checkbox">Remember Me
                                 </div>
                             </div>
-                            <!-- <div class="form-group" >
-                                <input type="submit" value="Login" class="btn float-right login_btn">
-                            </div> -->
-                            <a href="product.html">login</a>
+                            <div class="form-group" >
+                                <a href="product.php"><input type="button" value="Login" class="btn float-right login_btn"></a>
+                            </div>
                         </form>
                         <div class="form-group">
                             <p class = "warning">login specifically for shop owner !</p>
@@ -63,6 +62,6 @@
                 <i class="fab fa-twitter"></i>
             </p>
         </div>
-        <script src="../js/javascript.js"></script>
+        <script src="js/javascript.js"></script>
     </body>
 </html>

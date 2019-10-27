@@ -12,37 +12,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/profit.css">
+    <link rel="stylesheet" href="css/product.css">
     <title>Document</title>
 </head>
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="../img/background/pp.jpg" alt="foto profil">
+        <img src="img/background/pp.jpg" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20">WP-Team</p>
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.html"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.html"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.html"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.html"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.html"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -58,7 +58,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <p class= "link">Admin / Profit</p>
+                    <p class= "link">Admin / Products</p>
                     <div class="input-container">
                         <input type="text" id="myInput" onkeyup="myFunction()" class="input-field" placeholder="Type to search...">
                         <i class="fas fa-search icon"></i>
@@ -90,10 +90,7 @@
                                 <td class="column-3">21</td>
                                 <td class="column-4">5.000</td>
                                 <td class="column-5">34.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn" data-toggle="modal" data-target="#ModalSold">SOLD</button>
-                                    <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
-                                </td>
+                                <td class="column-6"><i class="fas fa-share-square" data-toggle="modal" data-target="#modelId"></i></td>
                             </tr>
                             <tr >
                                 <td scope="row" class="column-1">2</td>
@@ -101,10 +98,7 @@
                                 <td class="column-3">7</td>
                                 <td class="column-4">3.000</td>
                                 <td class="column-5">25.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
+                                <td class="column-6"><i class="fas fa-share-square"></i></td>
                             </tr>
                             <tr >
                                 <td scope="row" class="column-1">3</td>
@@ -112,10 +106,7 @@
                                 <td class="column-3">0</td>
                                 <td class="column-4">16.000</td>
                                 <td class="column-5">98.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
+                                <td class="column-6"><i class="fas fa-share-square"></i></td>
                             </tr>
                             <tr >
                                 <td scope="row" class="column-1">4</td>
@@ -123,10 +114,7 @@
                                 <td class="column-3">1</td>
                                 <td class="column-4">25.000</td>
                                 <td class="column-5">100.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
+                                <td class="column-6"><i class="fas fa-share-square"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -141,7 +129,7 @@
             <i class="fab fa-twitter"></i>
         </p>
     </div>
-    <div class="modal fade" id="ModalSold" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -149,46 +137,29 @@
                         product
                     </div>
                     <div class="modal-image">
-                        <img src="../img/background/wafer.jpg" alt="Gambar Barang">
+                        <img src="img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
                     <div class="form-group mt-3">
-                      <p class="text-white text-centered">Tango 130GR</p>
+                      <label class="text-white">Name Product</label>
+                      <input type="text" class="form-control" placeholder="Tango 130GR">
                     </div>
                     <div class="form-group">
-                        <label class="text-white sold-title">Sold : </label>
-                        <input type="number" class="form-control sold-input">
+                        <label class="text-white">Price</label>
+                        <input type="text" class="form-control" placeholder="RP. 5.000/item">
+                        <input type="text" class="form-control" placeholder="RP. 34.000/box">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white">Qty</label>
+                        <input type="text" class="form-control" placeholder="21">
                     </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="ModalBuy" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="modal-title">
-                            product
-                        </div>
-                        <div class="modal-image">
-                            <img src="../img/background/wafer.jpg" alt="Gambar Barang">
-                        </div>
-                        <div class="form-group mt-3">
-                          <p class="text-white text-centered">Tango 130GR</p>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-white buy-title">Add Stock : </label>
-                            <input type="number" class="form-control buy-input">
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     <script>
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
@@ -209,6 +180,6 @@
             }
         }
     </script>
-    <script src="../js/javascript.js"></script>
+    <script src="js/javascript.js"></script>
 </body>
 </html>

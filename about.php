@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../css/style_about.css">
+        <link rel="stylesheet" href="css/style_about.css">
         <title>About Me</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         
@@ -23,7 +23,7 @@
              other basic needs.</p>
        </div>
        
-       <script src="../js/javascript.js"></script>
+       <script src="js/javascript.js"></script>
     </body>
     <div class="footer">
         <p class="content-1"><i class="fas fa-phone"></i> +62 822-4545-7789</i></p>

@@ -15,37 +15,37 @@
     <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-cartesian.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/grafik.css">
+    <link rel="stylesheet" href="css/grafik.css">
     <title>Document</title>
 </head>
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="../img/background/pp.jpg" alt="foto profil">
+        <img src="img/background/pp.jpg" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20">WP-Team</p>
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.html"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.html"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.html"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.html"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.html"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -99,7 +99,7 @@
             <i class="fab fa-twitter"></i>
         </p>
     </div>
-    <script src="../js/javascript.js"></script>
-    <script src="../js/chartPembelian.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/chartPembelian.js"></script>
 </body>
 </html>
