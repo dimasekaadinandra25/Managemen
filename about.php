@@ -3,7 +3,6 @@
         <link rel="stylesheet" href="css/style_about.css">
         <title>About Me</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-        
     </head>
     <body>
         <div class="Navbar">
@@ -22,14 +21,7 @@
               this grocery store such as rice, snacks, and 
              other basic needs.</p>
        </div>
-       
        <script src="js/javascript.js"></script>
     </body>
-    <div class="footer">
-        <p class="content-1"><i class="fas fa-phone"></i> +62 822-4545-7789</i></p>
-        <p class="content-2">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-        </p>
-    </div>
+    <?php include 'footer.php' ?>
 </html>

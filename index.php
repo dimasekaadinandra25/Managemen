@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <html>
         <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <?php include 'header.php' ?>
         <title>Data Management</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+    </html>
     <body>
         <div class="sidebar" id="mySidebar">
             <div class="container">
@@ -95,15 +86,7 @@
 				</div>
             </div>
         </div>
-
-
-        <div class="footer">
-            <p class="content-1"><i class="fas fa-phone"></i> +62 822-4545-7789</i></p>
-            <p class="content-2">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-            </p>
-        </div>
+        <?php include 'footer.php' ?>
         <script src="js/javascript.js"></script>
         <script>
             function myFunction() {
