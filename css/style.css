@@ -102,14 +102,14 @@
 }
 
 .title .title_toko{
-    font-size: 17px;
+    font-size: 25px;
     text-transform: uppercase;
     color: black;
     font-weight: bold;
 }
 
 .title .jalan{
-    font-size: 10px;
+    font-size: 15px;
     color: red;
 }
 
@@ -196,3 +196,13 @@ p{
     height: 35px;
     border: 1px solid blue;
   }
+
+@media (max-width: 650px){
+    .title .title_toko{
+        font-size: 20px;
+    }
+    
+    .title .jalan{
+        font-size: 13px;
+    }
+}
