@@ -23,4 +23,5 @@
     <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-cartesian.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <title>Management Store</title>
 </head>

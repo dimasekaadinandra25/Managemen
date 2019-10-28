@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "headerProduct.php" ?>
+
+<head>
+    <?php include "header.php" ?>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
 <body>
     <div class="sidebar" id="mySidebar">
         <img src="img/background/pp.jpg" alt="foto profil">
@@ -8,27 +13,37 @@
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php">
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php">
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php">
+                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php">
+                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php">
+            <p class="mr-5 float-right">LOGOUT</p>
+        </a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -44,7 +59,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <p class= "link">Admin / Products</p>
+                    <p class="link">Admin / Products</p>
                     <div class="input-container">
                         <input type="text" id="myInput" onkeyup="myFunction()" class="input-field" placeholder="Type to search...">
                         <i class="fas fa-search icon"></i>
@@ -70,7 +85,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">1</td>
                                 <td class="column-2">Tango 150GR</td>
                                 <td class="column-3">21</td>
@@ -78,7 +93,7 @@
                                 <td class="column-5">34.000</td>
                                 <td class="column-6"><i class="fas fa-share-square" data-toggle="modal" data-target="#modelId"></i></td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">2</td>
                                 <td class="column-2">Aqua 600ML</td>
                                 <td class="column-3">7</td>
@@ -86,7 +101,7 @@
                                 <td class="column-5">25.000</td>
                                 <td class="column-6"><i class="fas fa-share-square"></i></td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">3</td>
                                 <td class="column-2">Shampo lifebuoy hijau</td>
                                 <td class="column-3">0</td>
@@ -94,7 +109,7 @@
                                 <td class="column-5">98.000</td>
                                 <td class="column-6"><i class="fas fa-share-square"></i></td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">4</td>
                                 <td class="column-2">Cussons 200G</td>
                                 <td class="column-3">1</td>
@@ -120,8 +135,8 @@
                         <img src="img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
                     <div class="form-group mt-3">
-                      <label class="text-white">Name Product</label>
-                      <input type="text" class="form-control" placeholder="Tango 130GR">
+                        <label class="text-white">Name Product</label>
+                        <input type="text" class="form-control" placeholder="Tango 130GR">
                     </div>
                     <div class="form-group">
                         <label class="text-white">Price</label>
@@ -152,14 +167,15 @@
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
+                        tr[i].style.display = "";
                     } else {
-                    tr[i].style.display = "none";
+                        tr[i].style.display = "none";
                     }
-                }       
+                }
             }
         }
     </script>
     <script src="js/javascript.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'headerPrint.php' ?>
+
+<head>
+    <?php include 'header.php' ?>
+    <link rel="stylesheet" href="css/print.css">
+</head>
+
 <body>
     <div class="sidebar" id="mySidebar">
         <img src="img/background/pp.jpg" alt="foto profil">
@@ -8,27 +13,37 @@
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php">
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php">
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php">
+                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php">
+                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php">
+            <p class="mr-5 float-right">LOGOUT</p>
+        </a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -162,22 +177,22 @@
                     </table>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
     <?php include 'footer.php' ?>
     <script>
-        function change(select){
+        function change(select) {
             var selObj = document.getElementById("ubahField");
             var selValue = selObj.options[selObj.selectedIndex].value;
-            if(selValue == "pembelian"){
+            if (selValue == "pembelian") {
                 document.getElementById('tampil-pembelian').style.display = 'block';
                 document.getElementById('tampil-penjualan').style.display = 'none';
                 document.getElementById('tampil-laba').style.display = 'none';
-            }else if(selValue == "penjualan"){
+            } else if (selValue == "penjualan") {
                 document.getElementById('tampil-pembelian').style.display = 'none';
                 document.getElementById('tampil-penjualan').style.display = 'block';
                 document.getElementById('tampil-laba').style.display = 'none';
-            }else if(selValue == "laba"){
+            } else if (selValue == "laba") {
                 document.getElementById('tampil-pembelian').style.display = 'none';
                 document.getElementById('tampil-penjualan').style.display = 'none';
                 document.getElementById('tampil-laba').style.display = 'block';
@@ -186,4 +201,5 @@
     </script>
     <script src="js/javascript.js"></script>
 </body>
+
 </html>

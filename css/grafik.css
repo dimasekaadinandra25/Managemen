@@ -16,6 +16,11 @@
     z-index:2
 }
 
+.link{
+    margin-top: 25px;
+    font-weight: bold;
+}
+
 .sidebar{
     height: 100%;
     min-width: 350px;

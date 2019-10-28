@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php include 'header.php' ?>
     <link rel="stylesheet" href="css/grafik.css">
-    <title>Document</title>
 </head>
+
 <body>
     <div class="sidebar" id="mySidebar">
         <img src="img/background/pp.jpg" alt="foto profil">
@@ -12,27 +13,37 @@
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php">
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php">
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php">
+                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php">
+                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php">
+            <p class="mr-5 float-right">LOGOUT</p>
+        </a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -83,4 +94,5 @@
     <script src="js/javascript.js"></script>
     <script src="js/chartPembelian.js"></script>
 </body>
+
 </html>

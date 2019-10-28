@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "headerProfit.php" ?>
+
+<head>
+    <?php include "header.php" ?>
+    <link rel="stylesheet" href="css/profit.css">
+</head>
+
 <body>
     <div class="sidebar" id="mySidebar">
         <img src="img/background/pp.jpg" alt="foto profil">
@@ -8,27 +13,37 @@
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php"><p><i class="fas fa-chart-line pr-3"></i>CHART ></p></a>
+                    <a href="grafik.php">
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php"><p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p></a>
+                    <a href="product.php">
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php"><p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p></a>
+                    <a href="profit.php">
+                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                    </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php"><p><i class="fas fa-print pr-3"></i>PRINT ></p></a>
+                    <a href="print.php">
+                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php"><p class="mr-5 float-right">LOGOUT</p></a>
+        <a href="index.php">
+            <p class="mr-5 float-right">LOGOUT</p>
+        </a>
     </div>
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
@@ -44,7 +59,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <p class= "link">Admin / Profit</p>
+                    <p class="link">Admin / Profit</p>
                     <div class="input-container">
                         <input type="text" id="myInput" onkeyup="myFunction()" class="input-field" placeholder="Type to search...">
                         <i class="fas fa-search icon"></i>
@@ -70,7 +85,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">1</td>
                                 <td class="column-2">Tango 150GR</td>
                                 <td class="column-3">21</td>
@@ -81,7 +96,7 @@
                                     <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
                                 </td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">2</td>
                                 <td class="column-2">Aqua 600ML</td>
                                 <td class="column-3">7</td>
@@ -92,7 +107,7 @@
                                     <button class="buy btn">BUY</button>
                                 </td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">3</td>
                                 <td class="column-2">Shampo lifebuoy hijau</td>
                                 <td class="column-3">0</td>
@@ -103,7 +118,7 @@
                                     <button class="buy btn">BUY</button>
                                 </td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td scope="row" class="column-1">4</td>
                                 <td class="column-2">Cussons 200G</td>
                                 <td class="column-3">1</td>
@@ -132,7 +147,7 @@
                         <img src="img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
                     <div class="form-group mt-3">
-                      <p class="text-white text-centered">Tango 130GR</p>
+                        <p class="text-white text-centered">Tango 130GR</p>
                     </div>
                     <div class="form-group">
                         <label class="text-white sold-title">Sold : </label>
@@ -146,29 +161,29 @@
         </div>
     </div>
     <div class="modal fade" id="ModalBuy" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="modal-title">
-                            product
-                        </div>
-                        <div class="modal-image">
-                            <img src="img/background/wafer.jpg" alt="Gambar Barang">
-                        </div>
-                        <div class="form-group mt-3">
-                          <p class="text-white text-centered">Tango 130GR</p>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-white buy-title">Add Stock : </label>
-                            <input type="number" class="form-control buy-input">
-                        </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">
+                        product
                     </div>
-                    <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                    <div class="modal-image">
+                        <img src="img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
+                    <div class="form-group mt-3">
+                        <p class="text-white text-centered">Tango 130GR</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-white buy-title">Add Stock : </label>
+                        <input type="number" class="form-control buy-input">
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>
+    </div>
     <script>
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
@@ -181,14 +196,15 @@
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
+                        tr[i].style.display = "";
                     } else {
-                    tr[i].style.display = "none";
+                        tr[i].style.display = "none";
                     }
-                }       
+                }
             }
         }
     </script>
     <script src="js/javascript.js"></script>
 </body>
+
 </html>
