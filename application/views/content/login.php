@@ -24,14 +24,18 @@
                         <div class="form-group">
                             <div class="input-container">
                                 <i class="fa fa-user icon" aria-hidden="true"></i>
-                                <input type="text" class="input-field" placeholder="username" name="username" value="<?php if (isset($_COOKIE["setUsername"])) {echo $_COOKIE["setUsername"];} ?>">
+                                <input type="text" class="input-field" placeholder="username" name="username" value="<?php if (isset($_COOKIE["setUsername"])) {
+                                                                                                                            echo $_COOKIE["setUsername"];
+                                                                                                                        } ?>" autocomplete="off">
                             </div>
                             <div class="error"><?= form_error('username') ?></div>
                         </div>
                         <div class="form-group">
                             <div class="input-container">
                                 <i class="fa fa-key icon" aria-hidden="true"></i>
-                                <input type="password" class="input-field" placeholder="password" name="password" value="<?php if (isset($_COOKIE["setPassword"])) {echo $_COOKIE["setPassword"];} ?>">
+                                <input type="password" class="input-field" placeholder="password" name="password" value="<?php if (isset($_COOKIE["setPassword"])) {
+                                                                                                                                echo $_COOKIE["setPassword"];
+                                                                                                                            } ?>" autocomplete="off">
                             </div>
                             <div class="error"><?= form_error('username') ?></div>
                         </div>

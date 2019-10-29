@@ -46,4 +46,25 @@ class Linked extends CI_Controller
 		$this->load->view('content/grafik');
 		$this->load->view('footer');
 	}
+
+	public function product()
+	{
+		$this->load->view('header');
+		$this->load->view('content/product');
+		$this->load->view('footer');
+	}
+
+	public function profit()
+	{
+		$this->load->view('header');
+		$this->load->view('content/profit');
+		$this->load->view('footer');
+	}
+
+	public function print()
+	{
+		$this->load->view('header');
+		$this->load->view('content/print');
+		$this->load->view('footer');
+	}
 }

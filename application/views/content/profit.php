@@ -2,46 +2,45 @@
 <html lang="en">
 
 <head>
-    <?php include "header.php" ?>
-    <link rel="stylesheet" href="css/profit.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/') ?>profit.css">
 </head>
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="img/background/pp.jpg" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/background/pp.jpg" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20">WP-Team</p>
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php">
+                    <a href="<?= site_url('linked/graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php">
+                    <a href="<?= site_url('linked/product') ?>">
                         <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php">
+                    <a href="<?= site_url('linked/profit') ?>">
                         <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php">
+                    <a href="<?= site_url('linked/print') ?>">
                         <p><i class="fas fa-print pr-3"></i>PRINT ></p>
                     </a>
                 </div>
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php">
+        <a href="<?= site_url('login/logout') ?>">
             <p class="mr-5 float-right">LOGOUT</p>
         </a>
     </div>
@@ -135,7 +134,6 @@
             </div>
         </div>
     </div>
-    <?php include 'footer.php' ?>
     <div class="modal fade" id="ModalSold" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -144,7 +142,7 @@
                         product
                     </div>
                     <div class="modal-image">
-                        <img src="img/background/wafer.jpg" alt="Gambar Barang">
+                        <img src="<?php echo base_url() ?>assets/img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
                     <div class="form-group mt-3">
                         <p class="text-white text-centered">Tango 130GR</p>
@@ -168,7 +166,7 @@
                         product
                     </div>
                     <div class="modal-image">
-                        <img src="img/background/wafer.jpg" alt="Gambar Barang">
+                        <img src="<?php echo base_url() ?>assets/img/background/wafer.jpg" alt="Gambar Barang">
                     </div>
                     <div class="form-group mt-3">
                         <p class="text-white text-centered">Tango 130GR</p>
@@ -204,7 +202,7 @@
             }
         }
     </script>
-    <script src="js/javascript.js"></script>
+    <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
 </body>
 
 </html>

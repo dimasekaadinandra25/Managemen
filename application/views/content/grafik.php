@@ -7,7 +7,7 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="img/background/pp.jpg" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/background/pp.jpg" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20">WP-Team</p>
         <div class="container">
             <div class="row mt-5 size-20">
@@ -19,21 +19,21 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="product.php">
+                    <a href="<?= site_url('linked/product') ?>">
                         <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="profit.php">
+                    <a href="<?= site_url('linked/profit') ?>">
                         <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="print.php">
+                    <a href="<?= site_url('linked/print') ?>">
                         <p><i class="fas fa-print pr-3"></i>PRINT ></p>
                     </a>
                 </div>
