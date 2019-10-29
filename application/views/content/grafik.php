@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include 'header.php' ?>
-    <link rel="stylesheet" href="css/grafik.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/') ?>grafik.css">
 </head>
 
 <body>
@@ -41,7 +40,7 @@
             </div>
         </div>
         <div class="line"></div>
-        <a href="index.php">
+        <a href="<?= site_url('login/logout') ?>">
             <p class="mr-5 float-right">LOGOUT</p>
         </a>
     </div>
@@ -90,9 +89,8 @@
             </div>
         </div>
     </div>
-    <?php include 'footer.php' ?>
-    <script src="js/javascript.js"></script>
-    <script src="js/chartPembelian.js"></script>
+    <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
+    <script src="<?= base_url('assets/js/') ?>chartPembelian.js"></script>
 </body>
 
 </html>

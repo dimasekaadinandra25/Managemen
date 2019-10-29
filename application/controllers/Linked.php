@@ -39,4 +39,11 @@ class Linked extends CI_Controller
 		$this->load->view('content/about');
 		$this->load->view('footer');
 	}
+
+	public function graphic()
+	{
+		$this->load->view('header');
+		$this->load->view('content/grafik');
+		$this->load->view('footer');
+	}
 }
