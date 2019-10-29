@@ -24,18 +24,20 @@
                         <div class="form-group">
                             <div class="input-container">
                                 <i class="fa fa-user icon" aria-hidden="true"></i>
-                                <input type="text" class="input-field" placeholder="username" name="username">
+                                <input type="text" class="input-field" placeholder="username" name="username" value="<?php if (isset($_COOKIE["setUsername"])) {echo $_COOKIE["setUsername"];} ?>">
                             </div>
+                            <div class="error"><?= form_error('username') ?></div>
                         </div>
                         <div class="form-group">
                             <div class="input-container">
                                 <i class="fa fa-key icon" aria-hidden="true"></i>
-                                <input type="password" class="input-field" placeholder="password" name="password">
+                                <input type="password" class="input-field" placeholder="password" name="password" value="<?php if (isset($_COOKIE["setPassword"])) {echo $_COOKIE["setPassword"];} ?>">
                             </div>
+                            <div class="error"><?= form_error('username') ?></div>
                         </div>
                         <div class="form-group">
                             <div class="row align-items-center remember">
-                                <input type="checkbox">Remember Me
+                                <input type="checkbox" name="remember" <?php if (isset($_COOKIE["setUsername"])) { ?> checked="checked" <?php } ?>>Remember Me
                             </div>
                         </div>
                         <div class="form-group">

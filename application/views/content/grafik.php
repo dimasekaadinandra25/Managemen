@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row mt-5 size-20">
                 <div class="col-sm-12">
-                    <a href="grafik.php">
+                    <a href="<?= site_url('linked/graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
                     </a>
                 </div>

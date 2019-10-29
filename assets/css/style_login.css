@@ -17,6 +17,10 @@ body{
     height: 100%;
 }
 
+.error{
+    color: red;
+}
+
 .container{
     height: 100vh;
     padding: 0 50px;
