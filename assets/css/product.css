@@ -203,6 +203,22 @@
     margin-top: 100px;
 }
 
+.mt-60{
+    margin-top: 60px;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+.height-5{
+    height: 50px;
+}
+
+.width-full{
+    width: 100%;
+}
+
 @media (max-width: 380px){
     .footer .content-1,
     .footer .content-2{
@@ -235,7 +251,7 @@
 @media (max-width: 585px){
     .input-container{
         width: 80%;
-        margin: 10px 0 0 50px;
+        margin: 10px 0 -40px 50px;
     }
 
     .link{

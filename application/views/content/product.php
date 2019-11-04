@@ -65,7 +65,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-3 mt-60">
+                <div class="form-group">
+                    <button type="button" class="btn btn-warning font-bold height-5 width-full" data-toggle="modal" data-target="#addBarang">Tambah Barang</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -90,7 +94,7 @@
                                 <td class="column-3">21</td>
                                 <td class="column-4">5.000</td>
                                 <td class="column-5">34.000</td>
-                                <td class="column-6"><i class="fas fa-share-square" data-toggle="modal" data-target="#modelId"></i></td>
+                                <td class="column-6"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang"></i></td>
                             </tr>
                             <tr>
                                 <td scope="row" class="column-1">2</td>
@@ -123,7 +127,27 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="addBarang" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EditBarang" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
