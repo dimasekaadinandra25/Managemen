@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2019 at 10:50 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Nov 04, 2019 at 01:38 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -87,7 +87,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `password`, `gambar`) VALUES
-(1, 'camelia', 'camelia', 'camelia', '');
+(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'wp39559001.jpg');
 
 --
 -- Indexes for dumped tables

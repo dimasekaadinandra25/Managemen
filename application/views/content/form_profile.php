@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="<?= base_url('assets/css/') ?>grafik.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/') ?>profit.css">
 </head>
 
 <body>
@@ -61,43 +61,51 @@
         </span>
     </div>
     <div class="container">
-        <p class="link ml-2 mt-3">Admin / Chart</p>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="barang-baru">
-                    <p class="set-title">Barang Baru</p>
-                    <i class="fas fa-box-open set-icon"></i>
-                    <p class="set-sub-title">Total : 4</p>
-                </div>
+        <div class="row mt-5">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 border-whitesmoke">
+                <form action="<?= base_url('edit_profile/update') ?>" method="post" enctype="multipart/form-data">
+                    <img src="<?= base_url(); ?>/assets/img/<?= $this->session->userdata('foto'); ?>" class="foto-profil">
+                    <div class="form-group mt-5">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="mt-2">Nama</label>
+                            </div>
+                            <div class="col-sm">
+                                <input type="hidden" name="id" value="<?= $this->session->userdata('id') ?>">
+                                <input type="text" class="form-control" name="nama" placeholder="<?= $this->session->userdata('nama') ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="mt-2">Password</label>
+                            </div>
+                            <div class="col-sm">
+                                <input type="text" class="form-control" name="password" placeholder="Ubah Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label class="mt-2">Foto</label>
+                            </div>
+                            <div class="col-sm">
+                                <input type="file" class="form-control-file" name="foto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary width-100">Submit</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-sm-4">
-                <div class="penjualan">
-                    <p class="set-title">Penjualan</p>
-                    <i class="fas fa-money-bill-wave set-icon"></i>
-                    <p class="set-sub-title">Total : 250000</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="pembelian">
-                    <p class="set-title">Pembelian</p>
-                    <i class="fas fa-shopping-cart set-icon"></i>
-                    <p class="set-sub-title">Total : 150000</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div id="chartPembelian"></div>
-            </div>
-            <div class="col-sm-6">
-                <div id="myChart"></div>
-            </div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
-    <script src="<?= base_url('assets/js/') ?>chartPembelian.js"></script>
 </body>
 
 </html>

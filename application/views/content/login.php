@@ -44,6 +44,7 @@
                                 <input type="checkbox" name="remember" <?php if (isset($_COOKIE["setUsername"])) { ?> checked="checked" <?php } ?>>Remember Me
                             </div>
                         </div>
+                        <h4 class="text-danger text-center py-2"><?= @$error ?></h4>
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn float-right login_btn">
                         </div>

@@ -21,13 +21,17 @@ class Login extends CI_Controller
             $this->index();
         } else {
             $username = $this->input->post('username', TRUE);
-            $password = $this->input->post('password', TRUE);
+            $password = md5($this->input->post('password', TRUE));
             $validate = $this->login_model->validate($username, $password);
             if ($validate->num_rows() > 0) {
                 $data  = $validate->row_array();
-                $name  = $data['nama'];
+                $id = $data['iduser'];
+                $nama  = $data['nama'];
+                $gambar = $data['gambar'];
                 $sesdata = array(
-                    'nama'  => $name,
+                    'id' => $id,
+                    'nama'  => $nama,
+                    'foto' => $gambar,
                     'logged_in' => TRUE
                 );
                 $this->session->set_userdata($sesdata);
@@ -39,6 +43,10 @@ class Login extends CI_Controller
                     setcookie("setPassword", "");
                 }
                 redirect('linked/graphic');
+            } else {
+                $data['error'] = "Username dan Password Salah";
+                $this->load->view('header');
+                $this->load->view('content/login', $data);
             }
         }
     }

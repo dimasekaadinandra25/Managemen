@@ -7,10 +7,17 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="<?php echo base_url() ?>assets/img/background/pp.jpg" alt="foto profil">
-        <p class="text-centered mt-3 text-white size-20">WP-Team</p>
+        <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
+        <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
-            <div class="row mt-5 size-20">
+            <div class="row size-20 mt-5">
+                <div class="col-sm-12">
+                    <a href="<?= site_url('edit_profile') ?>">
+                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE ></p>
+                    </a>
+                </div>
+            </div>
+            <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
