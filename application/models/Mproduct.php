@@ -10,4 +10,10 @@ class Mproduct extends CI_Model
     {
         return $this->db->get('barang', $limit, $start);
     }
+
+    public function editData($data, $where)
+    {
+        $this->db->where($where);
+        $this->db->update('barang', $data);
+    }
 }

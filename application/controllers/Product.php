@@ -85,4 +85,25 @@ class Product extends CI_Controller
         $this->session->set_flashdata('pesan', 'Data Berhasil Dimasukkan');
         redirect('product/');
     }
+
+    public function ubah()
+    {
+        $id = $this->input->post('id');
+        $nama_barang = $this->input->post('nama_barang');
+        $harga = $this->input->post('harga');
+        $stock = $this->input->post('stock');
+        $data = array(
+            'nama_barang' => $nama_barang,
+            'stok' => $stock,
+            'harga' => $harga
+        );
+
+        $where = array(
+            'idbarang' => $id
+        );
+
+        $this->Mproduct->editData($data, $where);
+        $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
+        redirect('product/');
+    }
 }

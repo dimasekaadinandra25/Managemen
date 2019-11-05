@@ -79,7 +79,7 @@
                                 <label class="mt-2">Nama Barang</label>
                             </div>
                             <div class="col-sm">
-                                <input type="text" class="form-control" name="nama_barang">
+                                <input type="text" class="form-control" name="nama_barang" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                 <label class="mt-2">Stok Barang</label>
                             </div>
                             <div class="col-sm">
-                                <input type="number" class="form-control" name="stock">
+                                <input type="number" class="form-control" name="stock" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-sm">
                                 <input type="hidden" class="form-control" name="last_update" value="<?= $tanggal ?>">
-                                <input type="number" class="form-control" name="harga">
+                                <input type="number" class="form-control" name="harga" autocomplete="off">
                             </div>
                         </div>
                     </div>

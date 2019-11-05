@@ -108,7 +108,7 @@
                                     <td class="column-1"><?php echo $databarang->idbarang ?></td>
                                     <td class="column-2"><?php echo $databarang->nama_barang ?></td>
                                     <td class="column-3"><?php echo $databarang->stok ?></td>
-                                    <td class="column-4"><?php echo $databarang->harga ?></td>
+                                    <td class="column-4">Rp <?php echo number_format($databarang->harga) ?></td>
                                     <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
                                     <td class="column-6"><?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?></td>
                                     <td class="column-7"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
@@ -123,22 +123,23 @@
                                                 <div class="modal-image">
                                                     <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?>
                                                 </div>
-                                                <div class="form-group mt-3">
-                                                    <label class="text-white">Name Product</label>
-                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->nama_barang ?>">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="text-white">Price</label>
-                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->harga ?>">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="text-white">Qty</label>
-                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->stok ?>">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
+                                                <form action="<?= site_url('product/ubah') ?>" method="post">
+                                                    <div class="form-group mt-3">
+                                                        <label class="text-white">Name Product</label>
+                                                        <input type="hidden" class="form-control" name="id" value="<?php echo $databarang->idbarang ?>">
+                                                        <input type="text" class="form-control" name="nama_barang" placeholder="<?php echo $databarang->nama_barang ?>" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Qty</label>
+                                                        <input type="text" class="form-control" name="stock" placeholder="<?php echo $databarang->stok ?>" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Price</label>
+                                                        <input type="text" class="form-control" name="harga" placeholder="Rp <?php echo number_format($databarang->harga) ?>" autocomplete="off">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                </form>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save</button>
                                             </div>
                                         </div>
                                     </div>
