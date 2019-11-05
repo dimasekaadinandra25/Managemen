@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2019 at 01:38 PM
+-- Generation Time: Nov 05, 2019 at 02:01 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -30,11 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barang` (
   `idbarang` int(11) NOT NULL,
-  `tipe_barang` varchar(255) NOT NULL,
   `nama_barang` varchar(255) NOT NULL,
   `stok` int(11) NOT NULL,
-  `harga_pack` varchar(255) NOT NULL,
-  `harga_pcs` varchar(255) NOT NULL,
+  `harga` varchar(255) NOT NULL,
+  `foto_barang` varchar(255) NOT NULL,
   `last_update` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -87,7 +86,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `password`, `gambar`) VALUES
-(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'wp39559001.jpg');
+(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'thumb-1920-860753.jpg');
 
 --
 -- Indexes for dumped tables
@@ -127,7 +126,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pembelian`

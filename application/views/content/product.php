@@ -26,7 +26,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/product') ?>">
+                    <a href="<?= site_url('product') ?>">
                         <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
                     </a>
                 </div>
@@ -74,8 +74,13 @@
             </div>
             <div class="col-sm-3 mt-60">
                 <div class="form-group">
-                    <button type="button" class="btn btn-warning font-bold height-5 width-full" data-toggle="modal" data-target="#addBarang">Tambah Barang</button>
+                    <a href="<?= site_url('product/form') ?>"><button type="button" class="btn btn-warning font-bold height-5 width-full">Tambah Barang</button></a>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center text-green text-18">
+                <?= @$this->session->flashdata('pesan') ?>
             </div>
         </div>
     </div>
@@ -89,99 +94,64 @@
                                 <th class="column-1">No</th>
                                 <th class="column-2">Product</th>
                                 <th class="column-3">Qty</th>
-                                <th class="column-4">Harga Pcs</th>
-                                <th class="column-5">Harga Box</th>
-                                <th class="column-6">Action</th>
+                                <th class="column-4">Harga</th>
+                                <th class="column-5">Terakhir Diubah</th>
+                                <th class="column-6">Gambar</th>
+                                <th class="column-7">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row" class="column-1">1</td>
-                                <td class="column-2">Tango 150GR</td>
-                                <td class="column-3">21</td>
-                                <td class="column-4">5.000</td>
-                                <td class="column-5">34.000</td>
-                                <td class="column-6"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang"></i></td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">2</td>
-                                <td class="column-2">Aqua 600ML</td>
-                                <td class="column-3">7</td>
-                                <td class="column-4">3.000</td>
-                                <td class="column-5">25.000</td>
-                                <td class="column-6"><i class="fas fa-share-square"></i></td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">3</td>
-                                <td class="column-2">Shampo lifebuoy hijau</td>
-                                <td class="column-3">0</td>
-                                <td class="column-4">16.000</td>
-                                <td class="column-5">98.000</td>
-                                <td class="column-6"><i class="fas fa-share-square"></i></td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">4</td>
-                                <td class="column-2">Cussons 200G</td>
-                                <td class="column-3">1</td>
-                                <td class="column-4">25.000</td>
-                                <td class="column-5">100.000</td>
-                                <td class="column-6"><i class="fas fa-share-square"></i></td>
-                            </tr>
+                            <?php
+                            foreach ($data->result() as $databarang) {
+                                ?>
+                                <tr>
+                                    <td class="column-1"><?php echo $databarang->idbarang ?></td>
+                                    <td class="column-2"><?php echo $databarang->nama_barang ?></td>
+                                    <td class="column-3"><?php echo $databarang->stok ?></td>
+                                    <td class="column-4"><?php echo $databarang->harga ?></td>
+                                    <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
+                                    <td class="column-6"><?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?></td>
+                                    <td class="column-7"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
+                                </tr>
+                                <div class="modal fade" id="EditBarang-<?= $databarang->idbarang ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="modal-title">
+                                                    product
+                                                </div>
+                                                <div class="modal-image">
+                                                    <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?>
+                                                </div>
+                                                <div class="form-group mt-3">
+                                                    <label class="text-white">Name Product</label>
+                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->nama_barang ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="text-white">Price</label>
+                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->harga ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="text-white">Qty</label>
+                                                    <input type="text" class="form-control" placeholder="<?php echo $databarang->stok ?>">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="addBarang" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Body
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="EditBarang" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-title">
-                        product
-                    </div>
-                    <div class="modal-image">
-                        <img src="<?php echo base_url() ?>assets/img/background/wafer.jpg" alt="Gambar Barang">
-                    </div>
-                    <div class="form-group mt-3">
-                        <label class="text-white">Name Product</label>
-                        <input type="text" class="form-control" placeholder="Tango 130GR">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white">Price</label>
-                        <input type="text" class="form-control" placeholder="RP. 5.000/item">
-                        <input type="text" class="form-control" placeholder="RP. 34.000/box">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-white">Qty</label>
-                        <input type="text" class="form-control" placeholder="21">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
+        <div class="row mb-50">
+            <div class="col">
+                <?= $pagination ?>
             </div>
         </div>
     </div>

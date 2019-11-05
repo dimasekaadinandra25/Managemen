@@ -26,7 +26,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/product') ?>">
+                    <a href="<?= site_url('product') ?>">
                         <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
                     </a>
                 </div>

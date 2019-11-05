@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .overlay{
@@ -132,12 +133,12 @@
     text-align: center;
 }
 
-.column-3, .column-4, .column-5, .column-6{
+.column-3, .column-4, .column-5, .column-6, .column-7{
     width: 10%;
     text-align: center;
 }
 
-.column-6 i{
+.column-7 i{
     font-size: 25px;
     cursor: pointer;
 }
@@ -150,6 +151,7 @@
     width: 100%;
     color: white;
     box-sizing: border-box;
+    z-index: 10;
 }
 
 .footer .content-1{
@@ -219,6 +221,37 @@
     width: 100%;
 }
 
+.border-whitesmoke{
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 5px whitesmoke;
+    padding: 10px;
+    margin: 10px;
+}
+
+.back{
+    position: absolute;
+    margin-left: 20px;
+    z-index: 10;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.text-green{
+    color: green;
+}
+
+.text-18{
+    font-size: 18px;
+}
+
+.mb-50{
+    margin-bottom: 50px;
+}
+
 @media (max-width: 380px){
     .footer .content-1,
     .footer .content-2{
@@ -231,19 +264,19 @@
 }
 
 @media (max-width: 1220px){
-    .column-5{
+    .column-6{
         display: none;
     }
 }
 
 @media (max-width: 1000px){
-    .column-4{
+    .column-5{
         display: none;
     }
 }
 
 @media (max-width: 770px){
-    .column-3{
+    .column-4{
         display: none;
     }
 }
