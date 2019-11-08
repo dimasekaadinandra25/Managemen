@@ -62,7 +62,9 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-3 mt-60">
+                <a href="<?= site_url('test_cetak') ?>"><button class="btn btn-primary height-5 width-full"><i class="fas fa-print text-18"></i></button></a>
+            </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <p class="link">Admin / Products</p>

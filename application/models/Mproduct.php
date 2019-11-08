@@ -16,4 +16,9 @@ class Mproduct extends CI_Model
         $this->db->where($where);
         $this->db->update('barang', $data);
     }
+
+    public function getAll()
+    {
+        return $this->db->get('barang');
+    }
 }
