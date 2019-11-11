@@ -33,7 +33,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/profit') ?>">
+                    <a href="<?= site_url('profit') ?>">
                         <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
                     </a>
                 </div>

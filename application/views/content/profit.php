@@ -33,7 +33,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/profit') ?>">
+                    <a href="<?= site_url('profit') ?>">
                         <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
                     </a>
                 </div>
@@ -85,56 +85,58 @@
                                 <th class="column-1">No</th>
                                 <th class="column-2">Product</th>
                                 <th class="column-3">Qty</th>
-                                <th class="column-4">Harga Pcs</th>
-                                <th class="column-5">Harga Box</th>
+                                <th class="column-4">Harga</th>
+                                <th class="column-5">Terakhir Diubah</th>
                                 <th class="column-6">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row" class="column-1">1</td>
-                                <td class="column-2">Tango 150GR</td>
-                                <td class="column-3">21</td>
-                                <td class="column-4">5.000</td>
-                                <td class="column-5">34.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn" data-toggle="modal" data-target="#ModalSold">SOLD</button>
-                                    <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">2</td>
-                                <td class="column-2">Aqua 600ML</td>
-                                <td class="column-3">7</td>
-                                <td class="column-4">3.000</td>
-                                <td class="column-5">25.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">3</td>
-                                <td class="column-2">Shampo lifebuoy hijau</td>
-                                <td class="column-3">0</td>
-                                <td class="column-4">16.000</td>
-                                <td class="column-5">98.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">4</td>
-                                <td class="column-2">Cussons 200G</td>
-                                <td class="column-3">1</td>
-                                <td class="column-4">25.000</td>
-                                <td class="column-5">100.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
+                            <?php
+                            foreach ($data->result() as $databarang) {
+                                ?>
+                                <tr>
+                                    <td class="column-1"><?php echo $databarang->idbarang ?></td>
+                                    <td class="column-2"><?php echo $databarang->nama_barang ?></td>
+                                    <td class="column-3"><?php echo $databarang->stok ?></td>
+                                    <td class="column-4">Rp <?php echo number_format($databarang->harga) ?></td>
+                                    <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
+                                    <td class="column-6">
+                                        <button class="sold btn" data-toggle="modal" data-target="#ModalSold">SOLD</button>
+                                        <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
+                                    </td>
+                                </tr>
+                                <div class="modal fade" id="EditBarang-<?= $databarang->idbarang ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="modal-title">
+                                                    product
+                                                </div>
+                                                <div class="modal-image">
+                                                    <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?>
+                                                </div>
+                                                <form action="<?= site_url('product/ubah') ?>" method="post">
+                                                    <div class="form-group mt-3">
+                                                        <label class="text-white">Name Product</label>
+                                                        <input type="hidden" class="form-control" name="id" value="<?php echo $databarang->idbarang ?>">
+                                                        <input type="text" class="form-control" name="nama_barang" placeholder="<?php echo $databarang->nama_barang ?>" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Qty</label>
+                                                        <input type="text" class="form-control" name="stock" placeholder="<?php echo $databarang->stok ?>" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Price</label>
+                                                        <input type="text" class="form-control" name="harga" placeholder="Rp <?php echo number_format($databarang->harga) ?>" autocomplete="off">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                </form>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
