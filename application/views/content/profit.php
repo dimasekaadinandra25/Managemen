@@ -13,35 +13,35 @@
             <div class="row size-20 mt-5">
                 <div class="col-sm-12">
                     <a href="<?= site_url('edit_profile') ?>">
-                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE ></p>
+                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE <i class="fas fa-chevron-right ml-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/graphic') ?>">
-                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="pl-5 fas fa-chevron-right ml-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('product') ?>">
-                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS<i class="fas fa-chevron-right ml-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('profit') ?>">
-                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                        <p><i class="fas fa-money-bill-wave pr-4"></i>PROFIT <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/print') ?>">
-                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                        <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
             </div>
@@ -105,37 +105,6 @@
                                         <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="EditBarang-<?= $databarang->idbarang ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <div class="modal-title">
-                                                    product
-                                                </div>
-                                                <div class="modal-image">
-                                                    <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?>
-                                                </div>
-                                                <form action="<?= site_url('product/ubah') ?>" method="post">
-                                                    <div class="form-group mt-3">
-                                                        <label class="text-white">Name Product</label>
-                                                        <input type="hidden" class="form-control" name="id" value="<?php echo $databarang->idbarang ?>">
-                                                        <input type="text" class="form-control" name="nama_barang" placeholder="<?php echo $databarang->nama_barang ?>" autocomplete="off">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="text-white">Qty</label>
-                                                        <input type="text" class="form-control" name="stock" placeholder="<?php echo $databarang->stok ?>" autocomplete="off">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="text-white">Price</label>
-                                                        <input type="text" class="form-control" name="harga" placeholder="Rp <?php echo number_format($databarang->harga) ?>" autocomplete="off">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary">Save</button>
-                                                </form>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             <?php } ?>
                         </tbody>
                     </table>
