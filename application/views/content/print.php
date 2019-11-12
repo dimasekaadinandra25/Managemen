@@ -75,9 +75,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <select class="custom-select mt-3">
-                        <option value="">Bulan</option>
-                        <option value="januari">Januari</option>
-                        <option value="februari">Februari</option>
+                        <option value=""></option>
                     </select>
                 </div>
             </div>

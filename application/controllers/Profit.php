@@ -82,29 +82,36 @@ class Profit extends CI_Controller
 
     public function Pembelian()
     {
-        $id = $this->input->post('id');
-        $current_stock = $this->input->post('current_stock');
-        $add = $this->input->post('add_stock');
-        $current_time = date_now();
-        $stock = $current_stock + $add;
 
-        $data_pembelian = array(
-            'id_barang' => $id,
-            'date_pembelian' => $current_time,
-            'stock' => $add
-        );
+        $this->form_validation->set_rules('add_stock', 'stok', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->session->set_flashdata('error', 'Silakan Cek Form Kembali');
+            redirect('profit/');
+        } else {
+            $id = $this->input->post('id');
+            $current_stock = $this->input->post('current_stock');
+            $add = $this->input->post('add_stock');
+            $current_time = date_now();
+            $stock = $current_stock + $add;
 
-        $data_barang = array(
-            'stok' => $stock
-        );
+            $data_pembelian = array(
+                'id_barang' => $id,
+                'date_pembelian' => $current_time,
+                'stock' => $add
+            );
 
-        $where = array(
-            'idbarang' => $id
-        );
+            $data_barang = array(
+                'stok' => $stock
+            );
 
-        $this->Mproduct->editData($data_barang, $where);
-        $this->Mprofit->addDataPembelian($data_pembelian);
-        $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
-        redirect('profit/');
+            $where = array(
+                'idbarang' => $id
+            );
+
+            $this->Mproduct->editData($data_barang, $where);
+            $this->Mprofit->addDataPembelian($data_pembelian);
+            $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
+            redirect('profit/');
         }
+    }
 }
