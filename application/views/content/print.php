@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="sidebar" id="mySidebar">
+    <div class="sidebar" id="mySidebar ">
         <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
