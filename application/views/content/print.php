@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="sidebar" id="mySidebar ">
+    <div class="sidebar" id="mySidebar">
         <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
@@ -75,7 +75,11 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <select class="custom-select mt-3">
-                        <option value=""></option>
+                        <option value="<?= month() ?>"><?= option1() ?></option>
+                        <option value="<?= prev1_month() ?>"><?= option2() ?></option>
+                        <option value="<?= prev2_month() ?>"><?= option3() ?></option>
+                        <option value="<?= prev3_month() ?>"><?= option4() ?></option>
+                        <option value="<?= prev4_month() ?>"><?= option5() ?></option>
                     </select>
                 </div>
             </div>
