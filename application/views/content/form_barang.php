@@ -13,35 +13,35 @@
             <div class="row size-20 mt-5">
                 <div class="col-sm-12">
                     <a href="<?= site_url('edit_profile') ?>">
-                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE ></p>
+                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE <i class="fas fa-chevron-right ml-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/graphic') ?>">
-                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('product') ?>">
-                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS<i class="fas fa-chevron-right ml-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/profit') ?>">
-                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                        <p><i class="fas fa-money-bill-wave pr-4"></i>PROFIT <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/print') ?>">
-                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                        <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
             </div>

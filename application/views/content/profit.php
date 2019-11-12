@@ -13,35 +13,35 @@
             <div class="row size-20 mt-5">
                 <div class="col-sm-12">
                     <a href="<?= site_url('edit_profile') ?>">
-                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE ></p>
+                        <p><i class="fas fa-user pr-3"></i>EDIT PROFILE <i class="fas fa-chevron-right ml-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/graphic') ?>">
-                        <p><i class="fas fa-chart-line pr-3"></i>CHART ></p>
+                        <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="pl-5 fas fa-chevron-right ml-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('product') ?>">
-                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS ></p>
+                        <p><i class="fas fa-box-open pr-3"></i>PRODUCTS<i class="fas fa-chevron-right ml-5"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/profit') ?>">
-                        <p><i class="fas fa-money-bill-wave pr-3"></i>PROFIT ></p>
+                    <a href="<?= site_url('profit') ?>">
+                        <p><i class="fas fa-money-bill-wave pr-4"></i>PROFIT <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
                     </a>
                 </div>
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('linked/print') ?>">
-                        <p><i class="fas fa-print pr-3"></i>PRINT ></p>
+                        <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
             </div>
@@ -85,56 +85,27 @@
                                 <th class="column-1">No</th>
                                 <th class="column-2">Product</th>
                                 <th class="column-3">Qty</th>
-                                <th class="column-4">Harga Pcs</th>
-                                <th class="column-5">Harga Box</th>
+                                <th class="column-4">Harga</th>
+                                <th class="column-5">Terakhir Diubah</th>
                                 <th class="column-6">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row" class="column-1">1</td>
-                                <td class="column-2">Tango 150GR</td>
-                                <td class="column-3">21</td>
-                                <td class="column-4">5.000</td>
-                                <td class="column-5">34.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn" data-toggle="modal" data-target="#ModalSold">SOLD</button>
-                                    <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">2</td>
-                                <td class="column-2">Aqua 600ML</td>
-                                <td class="column-3">7</td>
-                                <td class="column-4">3.000</td>
-                                <td class="column-5">25.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">3</td>
-                                <td class="column-2">Shampo lifebuoy hijau</td>
-                                <td class="column-3">0</td>
-                                <td class="column-4">16.000</td>
-                                <td class="column-5">98.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" class="column-1">4</td>
-                                <td class="column-2">Cussons 200G</td>
-                                <td class="column-3">1</td>
-                                <td class="column-4">25.000</td>
-                                <td class="column-5">100.000</td>
-                                <td class="column-6">
-                                    <button class="sold btn">SOLD</button>
-                                    <button class="buy btn">BUY</button>
-                                </td>
-                            </tr>
+                            <?php
+                            foreach ($data->result() as $databarang) {
+                                ?>
+                                <tr>
+                                    <td class="column-1"><?php echo $databarang->idbarang ?></td>
+                                    <td class="column-2"><?php echo $databarang->nama_barang ?></td>
+                                    <td class="column-3"><?php echo $databarang->stok ?></td>
+                                    <td class="column-4">Rp <?php echo number_format($databarang->harga) ?></td>
+                                    <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
+                                    <td class="column-6">
+                                        <button class="sold btn" data-toggle="modal" data-target="#ModalSold">SOLD</button>
+                                        <button class="buy btn" data-toggle="modal" data-target="#ModalBuy">BUY</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
