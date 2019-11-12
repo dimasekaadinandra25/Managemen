@@ -42,7 +42,7 @@ class Login extends CI_Controller
                     setcookie("setUsername", "");
                     setcookie("setPassword", "");
                 }
-                redirect('linked/graphic');
+                redirect('graphic');
             } else {
                 $data['error'] = "Username dan Password Salah";
                 $this->load->view('header');

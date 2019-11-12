@@ -19,7 +19,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/graphic') ?>">
+                    <a href="<?= site_url('graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/print') ?>">
+                    <a href="<?= site_url('printpage') ?>">
                         <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
@@ -62,9 +62,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3 mt-60">
-                <a href="<?= site_url('test_cetak') ?>"><button class="btn btn-primary height-5 width-full"><i class="fas fa-print text-18"></i></button></a>
-            </div>
+            <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <p class="link">Admin / Products</p>
@@ -110,7 +108,7 @@
                                     <td class="column-1"><?php echo $databarang->idbarang ?></td>
                                     <td class="column-2"><?php echo $databarang->nama_barang ?></td>
                                     <td class="column-3"><?php echo $databarang->stok ?></td>
-                                    <td class="column-4">Rp <?php echo number_format($databarang->harga) ?></td>
+                                    <td class="column-4">Rp. <?php echo number_format($databarang->harga) ?></td>
                                     <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
                                     <td class="column-6"><?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?></td>
                                     <td class="column-7"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
@@ -129,19 +127,20 @@
                                                     <div class="form-group mt-3">
                                                         <label class="text-white">Name Product</label>
                                                         <input type="hidden" class="form-control" name="id" value="<?php echo $databarang->idbarang ?>">
-                                                        <input type="text" class="form-control" name="nama_barang" placeholder="<?php echo $databarang->nama_barang ?>" autocomplete="off">
+                                                        <input type="text" class="form-control" value="<?php echo $databarang->nama_barang ?>" autocomplete="off" disabled>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="text-white">Qty</label>
-                                                        <input type="text" class="form-control" name="stock" placeholder="<?php echo $databarang->stok ?>" autocomplete="off">
+                                                        <input type="text" class="form-control" value="<?php echo $databarang->stok ?>" autocomplete="off" disabled>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="text-white">Price</label>
                                                         <input type="text" class="form-control" name="harga" placeholder="Rp <?php echo number_format($databarang->harga) ?>" autocomplete="off">
+                                                        <input type="hidden" class="form-control" name="last_update" value="<?= $tanggal ?>">
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                                 </form>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                             </div>
                                         </div>
                                     </div>

@@ -19,7 +19,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/graphic') ?>">
+                    <a href="<?= site_url('graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/print') ?>">
+                    <a href="<?= site_url('printpage') ?>">
                         <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>

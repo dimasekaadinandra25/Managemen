@@ -19,7 +19,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/graphic') ?>">
+                    <a href="<?= site_url('graphic') ?>">
                         <p><i class="fas fa-chart-line pr-3"></i>CHART<i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="row size-20">
                 <div class="col-sm-12">
-                    <a href="<?= site_url('linked/print') ?>">
+                    <a href="<?= site_url('printpage') ?>">
                         <p><i class="fas fa-print pr-3"></i>PRINT <i class="fas fa-chevron-right ml-5 pl-5"></i></p>
                     </a>
                 </div>
@@ -65,21 +65,21 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="barang-baru">
-                    <p class="set-title">Barang Baru</p>
+                    <p class="set-title">Total Barang</p>
                     <i class="fas fa-box-open set-icon"></i>
-                    <p class="set-sub-title">Total : 4</p>
+                    <p class="set-sub-title">Total : <?= $total_barang->num_rows() ?></p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="penjualan">
-                    <p class="set-title">Penjualan</p>
+                    <p class="set-title">Penjualan Bulan lalu</p>
                     <i class="fas fa-money-bill-wave set-icon"></i>
                     <p class="set-sub-title">Total : 250000</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="pembelian">
-                    <p class="set-title">Pembelian</p>
+                    <p class="set-title">Pembelian Bulan lalu</p>
                     <i class="fas fa-shopping-cart set-icon"></i>
                     <p class="set-sub-title">Total : 150000</p>
                 </div>

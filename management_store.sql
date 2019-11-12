@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2019 at 02:01 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Nov 12, 2019 at 05:16 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,6 +37,17 @@ CREATE TABLE `barang` (
   `last_update` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`idbarang`, `nama_barang`, `stok`, `harga`, `foto_barang`, `last_update`) VALUES
+(12, 'test 2', 16, '22000', '126854.jpg', '2019-11-09'),
+(13, 'tes GL', 27, '112233', '1362643919579_.jpg', '2019-11-08'),
+(14, 'cpba', 10, '134', 'AMNESIA-chibi-33812382-1920-1200.jpg', '2019-11-09'),
+(15, 'cbaq', 12, '12467', 'TlwdUX9.png', '2019-11-09'),
+(16, 'cbaqwer', 12, '123456', '429165.jpg', '2019-11-09');
+
 -- --------------------------------------------------------
 
 --
@@ -46,11 +57,23 @@ CREATE TABLE `barang` (
 CREATE TABLE `pembelian` (
   `idpembelian` int(11) NOT NULL,
   `id_barang` int(11) NOT NULL,
-  `date_pembelian` datetime NOT NULL,
-  `stock` int(11) NOT NULL,
-  `harga_pcs` varchar(255) NOT NULL,
-  `harga_pack` varchar(255) NOT NULL
+  `date_pembelian` date NOT NULL,
+  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pembelian`
+--
+
+INSERT INTO `pembelian` (`idpembelian`, `id_barang`, `date_pembelian`, `stock`) VALUES
+(1, 12, '2019-11-09', 5),
+(2, 12, '2019-11-09', 2),
+(3, 13, '2019-11-09', 5),
+(4, 12, '2019-11-09', 5),
+(5, 14, '2019-11-09', 10),
+(6, 12, '2019-11-09', 3),
+(7, 14, '2019-11-09', 10),
+(8, 13, '2019-11-12', 5);
 
 -- --------------------------------------------------------
 
@@ -61,11 +84,20 @@ CREATE TABLE `pembelian` (
 CREATE TABLE `penjualan` (
   `idpenjualan` int(11) NOT NULL,
   `id_barang` int(11) NOT NULL,
-  `date_penjualan` datetime NOT NULL,
-  `stock` int(11) NOT NULL,
-  `harga_pcs` varchar(255) NOT NULL,
-  `harga_pack` varchar(255) NOT NULL
+  `date_penjualan` date NOT NULL,
+  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `penjualan`
+--
+
+INSERT INTO `penjualan` (`idpenjualan`, `id_barang`, `date_penjualan`, `stock`) VALUES
+(1, 12, '2019-11-09', 2),
+(2, 12, '2019-11-09', 10),
+(3, 12, '2019-11-09', 2),
+(4, 14, '2019-11-09', 11),
+(5, 13, '2019-11-12', 3);
 
 -- --------------------------------------------------------
 
@@ -126,19 +158,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`

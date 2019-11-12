@@ -156,6 +156,7 @@
     width: 100%;
     color: white;
     box-sizing: border-box;
+    z-index: 10;
 }
 
 .footer .content-1{
@@ -185,7 +186,7 @@
 }
 
 .modal-content{
-    background-color: rgba(110, 13, 13, 0.74);
+    background-color: rgba(0,0,0,0.9);
 }
 
 .modal-title{
@@ -299,6 +300,10 @@
     color: green;
 }
 
+.mb-50{
+    margin-bottom: 50px;
+}
+
 
 @media (max-width: 380px){
     .footer .content-1,
@@ -331,6 +336,8 @@
     .buy,
     .sold{
         width: 70%;
+        margin: 5px 0;
+        padding: 5px;
     }
 }
 
