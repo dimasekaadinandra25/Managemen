@@ -24,4 +24,11 @@ class Printpage extends CI_Controller
         $data = $this->Mprint->get_penjualan($data_jual)->result();
         echo json_encode($data);
     }
+
+    function data_pembelian()
+    {
+        $data_beli = $this->input->post('id');
+        $data = $this->Mprint->get_pembelian($data_beli)->result();
+        echo json_encode($data);
+    }
 }

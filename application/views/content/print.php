@@ -75,6 +75,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <select class="custom-select mt-3" id="bulan">
+                        <option>Pilih</option>
                         <option value="<?= month() ?>"><?= option1() ?></option>
                         <option value="<?= prev1_month() ?>"><?= option2() ?></option>
                         <option value="<?= prev2_month() ?>"><?= option3() ?></option>
@@ -89,7 +90,7 @@
         </div>
         <div class="row mr-2">
             <div class="col-sm-12">
-                <div id="tampil-penjualan">
+                <div id="tampil-penjualan" class="mb-100">
                     <table class="table table-striped table-bordered text-center mt-2">
                         <thead>
                             <tr class="bg-primary text-white">
@@ -100,29 +101,17 @@
                                 <th class="cl-5">Value</th>
                             </tr>
                         </thead>
-                        <tbody id="hasil">
-                            <tr>
-                                <th class="cl-1">1</th>
-                                <th class="cl-2">02-10-2019</th>
-                                <th class="cl-3">Tango</th>
-                                <th class="cl-4">15</th>
-                                <th class="cl-5">20.000</th>
-                            </tr>
-                            <tr>
-                                <th class="cl-1">2</th>
-                                <th class="cl-2">05-10-2018</th>
-                                <th class="cl-3">Sprite</th>
-                                <th class="cl-4">2</th>
-                                <th class="cl-5">10.000</th>
-                            </tr>
+                        <tbody id="hasil_penjualan">
                         </tbody>
+                        <tfoot id="sub_penjualan">
+                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
         <div class="row mr-2">
             <div class="col-sm-12">
-                <div id="tampil-pembelian">
+                <div id="tampil-pembelian" class="mb-100">
                     <table class="table table-striped table-bordered text-center mt-2">
                         <thead>
                             <tr class="bg-danger text-white">
@@ -133,29 +122,17 @@
                                 <th class="cl-5">Value</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th class="cl-1">1</th>
-                                <th class="cl-2">05-10-2019</th>
-                                <th class="cl-3">Milo</th>
-                                <th class="cl-4">3</th>
-                                <th class="cl-5">15.000</th>
-                            </tr>
-                            <tr>
-                                <th class="cl-1">2</th>
-                                <th class="cl-2">05-10-2018</th>
-                                <th class="cl-3">Cola</th>
-                                <th class="cl-4">2</th>
-                                <th class="cl-5">20.000</th>
-                            </tr>
+                        <tbody id="hasil_pembelian">
                         </tbody>
+                        <tfoot id="sub_pembelian">
+                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
         <div class="row mr-2">
             <div class="col-sm-12">
-                <div id="tampil-laba">
+                <div id="tampil-laba" class="mb-100">
                     <table class="table table-striped table-bordered text-center mt-2">
                         <thead>
                             <tr class="bg-warning text-white">
@@ -189,6 +166,11 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 2
+            })
 
             $('#bulan').change(function() {
                 var id = $(this).val();
@@ -204,17 +186,83 @@
 
                         var html = '';
                         var i;
+                        var count = 1;
+                        var total = '';
+                        var total_all = '';
+                        var sub = '';
                         for (i = 0; i < data.length; i++) {
+                            total = data[i].stock * data[i].harga;
+                            total_all = parseInt(total_all + total);
                             html += '<tr>' +
-                                '<td>' + data[i].idpenjualan + '</td>' +
+                                '<td>' + count++ + '</td>' +
                                 '<td>' + data[i].date_penjualan + '</td>' +
                                 '<td>' + data[i].nama_barang + '</td>' +
                                 '<td>' + data[i].stock + '</td>' +
-                                '<td> Rp.' + data[i].harga + '</td>' +
+                                '<td>' + formatter.format(total) + '</td>' +
                                 '</tr>';
                         }
-                        $('#hasil').html(html);
+                        sub = '<tr>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="font-weight: bold">Total </td>' +
+                            '<td>' + formatter.format(total_all) + '</td>' +
+                            '</tr>';
+                        $('#hasil_penjualan').html(html);
+                        $('#sub_penjualan').html(sub);
+                    }
+                });
+                return false;
+            });
 
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 2
+            })
+
+            $('#bulan').change(function() {
+                var id = $(this).val();
+                $.ajax({
+                    url: "<?php echo site_url('printpage/data_pembelian'); ?>",
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    async: true,
+                    dataType: 'json',
+                    success: function(data) {
+
+                        var html = '';
+                        var i;
+                        var count = 1;
+                        var total = '';
+                        var total_all = '';
+                        var sub = '';
+                        for (i = 0; i < data.length; i++) {
+                            total = data[i].stock * data[i].harga;
+                            total_all = parseInt(total_all + total);
+                            html += '<tr>' +
+                                '<td>' + count++ + '</td>' +
+                                '<td>' + data[i].date_pembelian + '</td>' +
+                                '<td>' + data[i].nama_barang + '</td>' +
+                                '<td>' + data[i].stock + '</td>' +
+                                '<td>' + formatter.format(total) + '</td>' +
+                                '</tr>';
+                        }
+                        sub = '<tr>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="border: none;"></td>' +
+                            '<td style="font-weight: bold">Total </td>' +
+                            '<td>' + formatter.format(total_all) + '</td>' +
+                            '</tr>';
+                        $('#hasil_pembelian').html(html);
+                        $('#sub_pembelian').html(sub);
                     }
                 });
                 return false;

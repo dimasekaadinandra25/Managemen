@@ -107,15 +107,19 @@ th, td{
 }
 
 .cl-2{
-    width: 20%;
-}
-
-.cl-4, .cl-5{
     width: 10%;
 }
 
+.cl-4, .cl-5{
+    width: 5%;
+}
+
 .cl-3{
-    width: 30%;
+    width: 15%;
+}
+
+.mb-100{
+    margin-bottom: 100px;
 }
 
 #tampil-laba .cl-3,
@@ -132,6 +136,10 @@ th, td{
     font-size: 30px;
     margin-top: 15px;
     cursor: pointer;
+}
+
+.border-none{
+    border: none;
 }
 
 .footer{
