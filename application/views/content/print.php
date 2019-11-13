@@ -74,7 +74,7 @@
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
-                    <select class="custom-select mt-3">
+                    <select class="custom-select mt-3" id="bulan">
                         <option value="<?= month() ?>"><?= option1() ?></option>
                         <option value="<?= prev1_month() ?>"><?= option2() ?></option>
                         <option value="<?= prev2_month() ?>"><?= option3() ?></option>
@@ -100,7 +100,7 @@
                                 <th class="cl-5">Value</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="hasil">
                             <tr>
                                 <th class="cl-1">1</th>
                                 <th class="cl-2">02-10-2019</th>
@@ -187,6 +187,41 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#bulan').change(function() {
+                var id = $(this).val();
+                $.ajax({
+                    url: "<?php echo site_url('printpage/data_penjualan'); ?>",
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    async: true,
+                    dataType: 'json',
+                    success: function(data) {
+
+                        var html = '';
+                        var i;
+                        for (i = 0; i < data.length; i++) {
+                            html += '<tr>' +
+                                '<td>' + data[i].idpenjualan + '</td>' +
+                                '<td>' + data[i].date_penjualan + '</td>' +
+                                '<td>' + data[i].nama_barang + '</td>' +
+                                '<td>' + data[i].stock + '</td>' +
+                                '<td> Rp.' + data[i].harga + '</td>' +
+                                '</tr>';
+                        }
+                        $('#hasil').html(html);
+
+                    }
+                });
+                return false;
+            });
+
+        });
+    </script>
     <script>
         function change(select) {
             var selObj = document.getElementById("ubahField");
