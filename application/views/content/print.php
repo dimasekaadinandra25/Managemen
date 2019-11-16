@@ -63,31 +63,40 @@
     <div class="container">
         <p class="link ml-2 mt-2">Admin / Print</p>
         <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <select class="custom-select mt-3" id="ubahField" onchange="change(this)">
-                        <option value="penjualan">Penjualan</option>
-                        <option value="pembelian">Pembelian</option>
-                        <option value="laba">Laba</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <select class="custom-select mt-3" id="bulan">
-                        <option>Pilih</option>
-                        <option value="<?= month() ?>"><?= option1() ?></option>
-                        <option value="<?= prev1_month() ?>"><?= option2() ?></option>
-                        <option value="<?= prev2_month() ?>"><?= option3() ?></option>
-                        <option value="<?= prev3_month() ?>"><?= option4() ?></option>
-                        <option value="<?= prev4_month() ?>"><?= option5() ?></option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="print-btn"><i class="fas fa-print"></i></div>
+            <div class="col-sm text-center text-danger text-18">
+                <?= @$this->session->flashdata('error') ?>
             </div>
         </div>
+        <form action="<?= site_url('print_data') ?>" method="post">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <select class="custom-select mt-3" id="ubahField" name="type" onchange="change(this)">
+                            <option value="penjualan">Penjualan</option>
+                            <option value="pembelian">Pembelian</option>
+                            <option value="laba">Laba</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <select class="custom-select mt-3" name="data_bulan" id="bulan">
+                            <option>Pilih</option>
+                            <option value="<?= month() ?>"><?= option1() ?></option>
+                            <option value="<?= prev1_month() ?>"><?= option2() ?></option>
+                            <option value="<?= prev2_month() ?>"><?= option3() ?></option>
+                            <option value="<?= prev3_month() ?>"><?= option4() ?></option>
+                            <option value="<?= prev4_month() ?>"><?= option5() ?></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2 mt-2">
+                    <button class="btn width-full">
+                        <div class="print-btn"><i class="fas fa-print"></i></div>
+                    </button>
+                </div>
+            </div>
+        </form>
         <div class="row mr-2">
             <div class="col-sm-12">
                 <div id="tampil-penjualan" class="mb-100">
@@ -135,30 +144,17 @@
                 <div id="tampil-laba" class="mb-100">
                     <table class="table table-striped table-bordered text-center mt-2">
                         <thead>
-                            <tr class="bg-warning text-white">
-                                <th class="cl-1">no</th>
-                                <th class="cl-2">Bulan</th>
-                                <th class="cl-3">Penjualan</th>
-                                <th class="cl-4">Pembelian</th>
-                                <th class="cl-5">Laba</th>
+                            <tr class="bg-secondary text-white">
+                                <th class="claba-1">No</th>
+                                <th class="claba-2">Nama Barang</th>
+                                <th class="claba-3">Penjualan</th>
+                                <th class="claba-4">Pembelian</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th class="cl-1">1</th>
-                                <th class="cl-2">September</th>
-                                <th class="cl-3">200.000</th>
-                                <th class="cl-4">150.000</th>
-                                <th class="cl-5">Untung 50.000</th>
-                            </tr>
-                            <tr>
-                                <th class="cl-1">2</th>
-                                <th class="cl-2">Oktober</th>
-                                <th class="cl-3">100.000</th>
-                                <th class="cl-4">130.000</th>
-                                <th class="cl-5">Rugi 30.000</th>
-                            </tr>
+                        <tbody id="hasil_laba">
                         </tbody>
+                        <tfoot id="sub_laba">
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -191,22 +187,22 @@
                         var total_all = '';
                         var sub = '';
                         for (i = 0; i < data.length; i++) {
-                            total = data[i].stock * data[i].harga;
+                            total = data[i].stock_penjualan * data[i].harga;
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
-                                '<td>' + count++ + '</td>' +
+                                '<td class="cl-1">' + count++ + '</td>' +
                                 '<td>' + data[i].date_penjualan + '</td>' +
                                 '<td>' + data[i].nama_barang + '</td>' +
-                                '<td>' + data[i].stock + '</td>' +
+                                '<td>' + data[i].stock_penjualan + '</td>' +
                                 '<td>' + formatter.format(total) + '</td>' +
                                 '</tr>';
                         }
                         sub = '<tr>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="font-weight: bold">Total </td>' +
-                            '<td>' + formatter.format(total_all) + '</td>' +
+                            '<td class="bg-primary text-white" style="border: none;" class="cl-1"></td>' +
+                            '<td class="bg-primary text-white" style="border: none;"></td>' +
+                            '<td class="bg-primary text-white" style="border: none;"></td>' +
+                            '<td class="bg-primary text-white" style="font-weight: bold">Total </td>' +
+                            '<td class="bg-primary text-white">' + formatter.format(total_all) + '</td>' +
                             '</tr>';
                         $('#hasil_penjualan').html(html);
                         $('#sub_penjualan').html(sub);
@@ -244,22 +240,22 @@
                         var total_all = '';
                         var sub = '';
                         for (i = 0; i < data.length; i++) {
-                            total = data[i].stock * data[i].harga;
+                            total = data[i].stock_pembelian * data[i].harga;
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
-                                '<td>' + count++ + '</td>' +
+                                '<td class="cl-1">' + count++ + '</td>' +
                                 '<td>' + data[i].date_pembelian + '</td>' +
                                 '<td>' + data[i].nama_barang + '</td>' +
-                                '<td>' + data[i].stock + '</td>' +
+                                '<td>' + data[i].stock_pembelian + '</td>' +
                                 '<td>' + formatter.format(total) + '</td>' +
                                 '</tr>';
                         }
                         sub = '<tr>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="border: none;"></td>' +
-                            '<td style="font-weight: bold">Total </td>' +
-                            '<td>' + formatter.format(total_all) + '</td>' +
+                            '<td class="bg-danger text-white" style="border: none;" class="cl-1"></td>' +
+                            '<td class="bg-danger text-white" style="border: none;"></td>' +
+                            '<td class="bg-danger text-white" style="border: none;"></td>' +
+                            '<td class="bg-danger text-white" style="font-weight: bold">Total </td>' +
+                            '<td class="bg-danger text-white">' + formatter.format(total_all) + '</td>' +
                             '</tr>';
                         $('#hasil_pembelian').html(html);
                         $('#sub_pembelian').html(sub);
@@ -267,7 +263,82 @@
                 });
                 return false;
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 2
+            })
 
+            $('#bulan').change(function() {
+                var id = $(this).val();
+                $.ajax({
+                    url: "<?php echo site_url('printpage/data_laba'); ?>",
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    async: true,
+                    dataType: 'json',
+                    success: function(data) {
+
+                        var html = '';
+                        var i;
+                        var count = 1;
+                        var total = '';
+                        var total_all_pembelian = '';
+                        var total_all_penjualan = '';
+                        var sub = '';
+                        var laba = '';
+                        for (i = 0; i < data.length; i++) {
+                            total_pembelian = data[i].st_beli * data[i].harga;
+                            total_penjualan = data[i].st_jual * data[i].harga;
+                            total_all_pembelian = parseInt(total_all_pembelian + total_pembelian);
+                            total_all_penjualan = parseInt(total_all_penjualan + total_penjualan);
+                            laba = parseInt(total_all_penjualan - total_all_pembelian);
+                            html += '<tr>' +
+                                '<td class="claba-1">' + count++ + '</td>' +
+                                '<td class="claba-2">' + data[i].nama_barang + '</td>' +
+                                '<td class="claba-3">' + formatter.format(total_penjualan) + '</td>' +
+                                '<td class="claba-4">' + formatter.format(total_pembelian) + '</td>' +
+                                '</tr>';
+                        }
+                        if (total_all_penjualan > total_all_pembelian) {
+                            sub = '<tr>' +
+                                '<td class="claba-1 bg-secondary text-white"></td>' +
+                                '<td class="claba-2 bg-secondary text-white" style="font-weight: bold">Total</td>' +
+                                '<td class="claba-3 bg-secondary text-white">' + formatter.format(total_all_penjualan) + '</td>' +
+                                '<td class="claba-4 bg-secondary text-white">' + formatter.format(total_all_pembelian) + '</td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                '<td class="claba-1 bg-success text-white"></td>' +
+                                '<td class="claba-2 bg-success text-white" style="font-weight: bold">Hasil</td>' +
+                                '<td class="claba-3 bg-success text-white">Untung</td>' +
+                                '<td class="claba-4 bg-success text-white">' + formatter.format(laba) + '</td>' +
+                                '</tr>';
+                        } else {
+                            sub = '<tr>' +
+                                '<td class="claba-1 bg-secondary text-white"></td>' +
+                                '<td class="claba-2 bg-secondary text-white" style="font-weight: bold">Total</td>' +
+                                '<td class="claba-3 bg-secondary text-white">' + formatter.format(total_all_penjualan) + '</td>' +
+                                '<td class="claba-4 bg-secondary text-white">' + formatter.format(total_all_pembelian) + '</td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                '<td class="claba-1 bg-danger text-white"></td>' +
+                                '<td class="claba-2 bg-danger text-white" style="font-weight: bold">Hasil</td>' +
+                                '<td class="claba-3 bg-danger text-white">Rugi</td>' +
+                                '<td class="claba-4 bg-danger text-white">' + formatter.format(Math.abs(laba)) + '</td>' +
+                                '</tr>';
+                        }
+                        $('#hasil_laba').html(html);
+                        $('#sub_laba').html(sub);
+                    }
+                });
+                return false;
+            });
         });
     </script>
     <script>

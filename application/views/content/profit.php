@@ -179,7 +179,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-50">
+        <div class="row mb-50 pagination">
             <div class="col">
                 <?= $pagination ?>
             </div>

@@ -320,6 +320,10 @@
         justify-content: center;
         padding: 5px;
     }
+
+    .pagination{
+        margin-bottom: 50px;
+    }
 }
 
 @media (max-width: 1220px){

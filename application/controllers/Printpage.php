@@ -31,4 +31,11 @@ class Printpage extends CI_Controller
         $data = $this->Mprint->get_pembelian($data_beli)->result();
         echo json_encode($data);
     }
+
+    function data_laba()
+    {
+        $data_laba = $this->input->post('id');
+        $data = $this->Mprint->get_laba($data_laba)->result();
+        echo json_encode($data);
+    }
 }

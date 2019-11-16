@@ -118,8 +118,24 @@ th, td{
     width: 15%;
 }
 
+.claba-1{
+    width: 5%;
+}
+
+.claba-2{
+    width: 20%;
+}
+
+.claba-3, .claba-4{
+    width: 15%;
+}
+
 .mb-100{
     margin-bottom: 100px;
+}
+
+.width-full{
+    width: 100%;
 }
 
 #tampil-laba .cl-3,
@@ -134,7 +150,6 @@ th, td{
 
 .print-btn{
     font-size: 30px;
-    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -186,5 +201,13 @@ th, td{
 
     .footer .content-2{
         float: left;
+    }
+
+    .cl-1{
+        display: none;
+    }
+
+    .claba-1{
+        display: none;
     }
 }

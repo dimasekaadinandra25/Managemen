@@ -62,7 +62,7 @@ class Profit extends CI_Controller
             $data_penjualan = array(
                 'id_barang' => $id,
                 'date_penjualan' => $current_time,
-                'stock' => $sold
+                'stock_penjualan' => $sold
             );
 
             $data_barang = array(
@@ -97,7 +97,7 @@ class Profit extends CI_Controller
             $data_pembelian = array(
                 'id_barang' => $id,
                 'date_pembelian' => $current_time,
-                'stock' => $add
+                'stock_pembelian' => $add
             );
 
             $data_barang = array(
