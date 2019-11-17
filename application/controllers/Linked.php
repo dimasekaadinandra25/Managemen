@@ -3,10 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Linked extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Mawal');
+	}
 	public function index()
 	{
+		$data['data'] = $this->Mawal->getAll();
 		$this->load->view('header');
-		$this->load->view('content/menu_awal');
+		$this->load->view('content/menu_awal', $data);
 		$this->load->view('footer');
 	}
 

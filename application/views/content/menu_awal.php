@@ -50,50 +50,23 @@
         </div>
     </div>
 
-
-    <div class="row text-center" id="myTable">
-        <div class="col-md-3">
-            <div class="product-top">
-                <img src="<?= base_url('assets/img/ItemUser/') ?>Tcoklat.jpg" width="300px" height="230px">
-                <div class="product-bottom text-center">
-                    <p class="size-20">Tango 130 GR <float class="div1">21</float>
-                    </p>
-                    <h5>Rp.5.000 /item</h5>
+    <div class="container-fluid">
+        <div class="row">
+            <?php foreach ($data->result() as $databarang) : ?>
+                <div class="col-md-3">
+                    <div class="product-top text-center">
+                        <img src="<?php echo base_url("assets/img/foto-barang/$databarang->foto_barang") ?>" width='100px' height='100px'>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <p class="size-20"><?php echo $databarang->nama_barang ?> <float class="div1"><?php echo $databarang->stok ?></float>
+                        </p>
+                        <h5>Rp. <?php echo number_format($databarang->harga) ?></h5>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product-top">
-                <img src="<?= base_url('assets/img/ItemUser/') ?>Aqua.jpg" width="300px" height="230px">
-            </div>
-            <div class="product-bottom text-center">
-                <p class="size-20">Aqua 600 ML <float class="div1">7</float>
-                </p>
-                <h5>Rp.3.000 /item</h5>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product-top">
-                <img src="<?= base_url('assets/img/ItemUser/') ?>sold.jpg" width="300px" height="230px">
-            </div>
-            <div class="product-bottom text-center">
-                <p class="size-20">lifebuoy <float class="div1">0</float>
-                </p>
-                <h5>Rp.16.000 /item</h5>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="product-top">
-                <img src="<?= base_url('assets/img/ItemUser/') ?>Bedak.jpg" width="300px" height="230px">
-            </div>
-            <div class="product-bottom text-center">
-                <p class="size-20">Cussons 200G <float class="div1">1</float>
-                </p>
-                <h5>Rp.25.000 /item</h5>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
+
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
     <script>
         function myFunction() {
