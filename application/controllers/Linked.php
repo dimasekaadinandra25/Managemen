@@ -10,9 +10,8 @@ class Linked extends CI_Controller
 	}
 	public function index()
 	{
-		$data['data'] = $this->Mawal->getAll();
 		$this->load->view('header');
-		$this->load->view('content/menu_awal', $data);
+		$this->load->view('content/menu_awal');
 		$this->load->view('footer');
 	}
 

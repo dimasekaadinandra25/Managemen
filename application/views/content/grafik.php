@@ -74,14 +74,30 @@
                 <div class="penjualan">
                     <p class="set-title">Penjualan Bulan lalu</p>
                     <i class="fas fa-money-bill-wave set-icon"></i>
-                    <p class="set-sub-title">Total : 250000</p>
+                    <?php
+                    $total_penjualan = 0;
+                    $total_all_penjualan = 0;
+                    foreach ($prev_penjualan->result() as $data_jual) {
+                        $total_penjualan = $data_jual->stock_penjualan * $data_jual->harga;
+                        $total_all_penjualan = $total_all_penjualan + $total_penjualan;
+                    }
+                    ?>
+                    <p class="set-sub-title">Total : Rp. <?= number_format($total_all_penjualan) ?></p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="pembelian">
                     <p class="set-title">Pembelian Bulan lalu</p>
                     <i class="fas fa-shopping-cart set-icon"></i>
-                    <p class="set-sub-title">Total : 150000</p>
+                    <?php
+                    $total_pembelian = 0;
+                    $total_all_pembelian = 0;
+                    foreach ($prev_pembelian->result() as $data_beli) {
+                        $total_pembelian = $data_beli->stock_pembelian * $data_beli->harga;
+                        $total_all_pembelian = $total_all_pembelian + $total_pembelian;
+                    }
+                    ?>
+                    <p class="set-sub-title">Total : Rp. <?= number_format($total_all_pembelian) ?></p>
                 </div>
             </div>
         </div>
@@ -96,8 +112,52 @@
             </div>
         </div>
     </div>
+    <?php
+    $dataPoints = array(
+        array("label" => prev4_month(), "y" => $prev4_pembelian),
+        array("label" => prev3_month(), "y" => $prev3_pembelian),
+        array("label" => prev2_month(), "y" => $prev2_pembelian),
+        array("label" => prev1_month(), "y" => $prev1_pembelian),
+        array("label" => month(), "y" => $month_pembelian)
+    );
+    $dataP = array(
+        array("label" => prev4_month(), "y" => $prev4_penjualan),
+        array("label" => prev3_month(), "y" => $prev3_penjualan),
+        array("label" => prev2_month(), "y" => $prev2_penjualan),
+        array("label" => prev1_month(), "y" => $prev1_penjualan),
+        array("label" => month(), "y" => $month_penjualan)
+    )
+    ?>
+    <script>
+        window.onload = function() {
+            var chart = new CanvasJS.Chart("chartPembelian", {
+
+                title: {
+                    text: "Pembelian"
+                },
+                axisX: {
+                    valueFormatString: "MMMM-YYYY",
+                    labelAngel: -50
+                },
+                data: [{
+                    type: "area",
+                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
+        }
+    </script>
+    <script>
+        anychart.onDocumentReady(function() {
+            var data = <?php echo json_encode($dataP, JSON_NUMERIC_CHECK); ?>;
+            var chart = anychart.bar();
+            chart.title("Penjualan");
+            chart.data(data);
+            chart.container('myChart');
+            chart.draw();
+        });
+    </script>
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
-    <script src="<?= base_url('assets/js/') ?>chartPembelian.js"></script>
 </body>
 
 </html>

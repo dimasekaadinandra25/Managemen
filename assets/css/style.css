@@ -36,6 +36,10 @@
     margin-left: 30px;
 }
 
+.mb-80{
+    margin-bottom: 80px;
+}
+
 .sidebar .line{
     display: flex;
     border: 1px solid white;

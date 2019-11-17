@@ -102,10 +102,11 @@
                         </thead>
                         <tbody>
                             <?php
+                            $count = 1;
                             foreach ($data_product->result() as $data) {
                                 ?>
                                 <tr>
-                                    <td scope="row" class="column-1"><?= $data->idbarang ?></td>
+                                    <td scope="row" class="column-1"><?= $count++ ?></td>
                                     <td class="column-2"><?= $data->nama_barang ?></td>
                                     <td class="column-3"><?= $data->stok ?></td>
                                     <td class="column-4">Rp. <?= number_format($data->harga) ?></td>

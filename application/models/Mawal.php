@@ -6,8 +6,15 @@ class Mawal extends CI_Model
         return $this->db->get('barang', $limit, $start);
     }
 
-    public function getAll()
+    public function get_search($keyword, $limit, $start)
     {
+        $this->db->like('nama_barang', $keyword);
+        return $this->db->get('barang', $limit, $start);
+    }
+
+    public function get_search_count($keyword)
+    {
+        $this->db->like('nama_barang', $keyword);
         return $this->db->get('barang');
     }
 }

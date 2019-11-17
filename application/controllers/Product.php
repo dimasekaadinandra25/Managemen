@@ -15,7 +15,7 @@ class Product extends CI_Controller
     {
         $config['base_url'] = site_url('product/index/');
         $config['total_rows'] = $this->db->count_all('barang');
-        $config['per_page'] = 4;
+        $config['per_page'] = 10;
         $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);

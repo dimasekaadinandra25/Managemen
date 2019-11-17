@@ -40,10 +40,12 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <div class="input-container">
-                        <input type="text" id="myInput" onkeyup="myFunction()" class="input-field" placeholder="Type to search...">
-                        <i class="fas fa-search icon"></i>
-                    </div>
+                    <form action="<?= site_url('menu_awal/search') ?>" method="post">
+                        <div class="input-container">
+                            <input type="text" name="search" class="input-field" placeholder="Type to search...">
+                            <i class="fas fa-search icon" type="submit"></i>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="col-sm-3"></div>
@@ -51,31 +53,33 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-80">
             <?php foreach ($data->result() as $databarang) : ?>
-                <div class="col-md-3">
+                <div class="col-md-3 my-4">
                     <div class="product-top text-center">
-                        <img src="<?php echo base_url("assets/img/foto-barang/$databarang->foto_barang") ?>" width='100px' height='100px'>
+                        <img src="<?php echo base_url("assets/img/foto-barang/$databarang->foto_barang") ?>" width='180px' height='180px'>
                     </div>
                     <div class="product-bottom text-center">
                         <p class="size-20"><?php echo $databarang->nama_barang ?> <float class="div1"><?php echo $databarang->stok ?></float>
                         </p>
-                        <h5>Rp. <?php echo number_format($databarang->harga) ?></h5>
+                        <?php
+                            if ($databarang->stok == 0) {
+                                ?>
+                            <h5 class="text-danger">Sold Out</h5>
+                        <?php } else { ?>
+                            <h5>Rp. <?php echo number_format($databarang->harga) ?></h5>
+                        <?php } ?>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="row mb-50">
+            <div class="col">
+                <?= $pagination ?>
+            </div>
+        </div>
     </div>
-
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
-    <script>
-        function myFunction() {
-            var input, filter, row, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            row = document.getElementById("myTable");
-        }
-    </script>
 </body>
 
 </html>
