@@ -64,6 +64,7 @@ class Product extends CI_Controller
 
         $image = "";
         $nama_barang = $this->input->post('nama_barang');
+        $nama_barang = ucfirst($nama_barang);
         $stock = $this->input->post('stock');
         $last_update = $this->input->post('last_update');
         $harga = $this->input->post('harga');

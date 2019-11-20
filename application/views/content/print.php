@@ -191,18 +191,18 @@
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
                                 '<td class="cl-1">' + count++ + '</td>' +
-                                '<td>' + data[i].date_penjualan + '</td>' +
-                                '<td>' + data[i].nama_barang + '</td>' +
-                                '<td>' + data[i].stock_penjualan + '</td>' +
-                                '<td>' + formatter.format(total) + '</td>' +
+                                '<td class="cl-2">' + data[i].date_penjualan + '</td>' +
+                                '<td class="cl-3">' + data[i].nama_barang + '</td>' +
+                                '<td class="cl-4">' + data[i].stock_penjualan + '</td>' +
+                                '<td class="cl-5">' + formatter.format(total) + '</td>' +
                                 '</tr>';
                         }
                         sub = '<tr>' +
-                            '<td class="bg-primary text-white" style="border: none;" class="cl-1"></td>' +
-                            '<td class="bg-primary text-white" style="border: none;"></td>' +
-                            '<td class="bg-primary text-white" style="border: none;"></td>' +
-                            '<td class="bg-primary text-white" style="font-weight: bold">Total </td>' +
-                            '<td class="bg-primary text-white">' + formatter.format(total_all) + '</td>' +
+                            '<td class="bg-primary text-white cl-1" style="border: none;" class="cl-1"></td>' +
+                            '<td class="bg-primary text-white cl-2" style="border: none;"></td>' +
+                            '<td class="bg-primary text-white cl-3" style="border: none;"></td>' +
+                            '<td class="bg-primary text-white cl-4" style="font-weight: bold">Total </td>' +
+                            '<td class="bg-primary text-white cl-5">' + formatter.format(total_all) + '</td>' +
                             '</tr>';
                         $('#hasil_penjualan').html(html);
                         $('#sub_penjualan').html(sub);
@@ -244,18 +244,18 @@
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
                                 '<td class="cl-1">' + count++ + '</td>' +
-                                '<td>' + data[i].date_pembelian + '</td>' +
-                                '<td>' + data[i].nama_barang + '</td>' +
-                                '<td>' + data[i].stock_pembelian + '</td>' +
-                                '<td>' + formatter.format(total) + '</td>' +
+                                '<td class="cl-2">' + data[i].date_pembelian + '</td>' +
+                                '<td class="cl-3">' + data[i].nama_barang + '</td>' +
+                                '<td class="cl-4">' + data[i].stock_pembelian + '</td>' +
+                                '<td class="cl-5">' + formatter.format(total) + '</td>' +
                                 '</tr>';
                         }
                         sub = '<tr>' +
-                            '<td class="bg-danger text-white" style="border: none;" class="cl-1"></td>' +
-                            '<td class="bg-danger text-white" style="border: none;"></td>' +
-                            '<td class="bg-danger text-white" style="border: none;"></td>' +
-                            '<td class="bg-danger text-white" style="font-weight: bold">Total </td>' +
-                            '<td class="bg-danger text-white">' + formatter.format(total_all) + '</td>' +
+                            '<td class="bg-danger text-white cl-1" style="border: none;" class="cl-1"></td>' +
+                            '<td class="bg-danger text-white cl-2" style="border: none;"></td>' +
+                            '<td class="bg-danger text-white cl-3" style="border: none;"></td>' +
+                            '<td class="bg-danger text-white cl-4" style="font-weight: bold">Total </td>' +
+                            '<td class="bg-danger text-white cl-5">' + formatter.format(total_all) + '</td>' +
                             '</tr>';
                         $('#hasil_pembelian').html(html);
                         $('#sub_pembelian').html(sub);
