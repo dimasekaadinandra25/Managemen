@@ -7,6 +7,3 @@ function close_navbar() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
-function goBack() {
-    window.history.back();
-}

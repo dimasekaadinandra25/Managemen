@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -108,8 +108,8 @@
                                 <tr>
                                     <td scope="row" class="column-1"><?= $count++ ?></td>
                                     <td class="column-2"><?= $data->nama_barang ?></td>
-                                    <td class="column-3"><?= $data->stok ?></td>
-                                    <td class="column-4">Rp. <?= number_format($data->harga) ?></td>
+                                    <td class="column-3"><?= $data->stock ?></td>
+                                    <td class="column-4">Rp. <?= number_format($data->harga_beli) ?></td>
                                     <td class="column-5"><?= "<img src='" . base_url("assets/img/foto-barang/" . $data->foto_barang) . "' width='100' height='100'>" ?></td>
                                     <td class="column-6">
                                         <button class="sold btn" data-toggle="modal" data-target="#ModalSold-<?= $data->idbarang ?>">SOLD</button>
@@ -131,8 +131,12 @@
                                                         <p class="text-white text-centered"><?= $data->nama_barang ?></p>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label class="text-white sold-title">Stock Saat Ini</label>
+                                                        <input type="text" class="form-control" value="<?php echo $data->stock ?>" disabled>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <input type="hidden" class="form-control" name="id" value="<?php echo $data->idbarang ?>">
-                                                        <input type="hidden" class="form-control" name="current_stock" value="<?php echo $data->stok ?>">
+                                                        <input type="hidden" class="form-control" name="current_stock" value="<?php echo $data->stock ?>">
                                                         <label class="text-white sold-title">Terjual:</label>
                                                         <input type="number" class="form-control sold-input" name="sold_stock">
                                                     </div>
@@ -160,8 +164,20 @@
                                                         <p class="text-white text-centered"><?= $data->nama_barang ?></p>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label class="text-white sold-title">Stock Saat Ini</label>
+                                                        <input type="text" class="form-control" value="<?php echo $data->stock ?>" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white sold-title">Harga PCS</label>
+                                                        <input type="text" class="form-control" value="Rp. <?php echo number_format($data->harga_beli_pcs) ?>" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white sold-title">Harga Beli</label>
+                                                        <input type="text" class="form-control" name="harga_beli" placeholder="Rp. <?php echo number_format($data->harga_beli) ?>">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <input type="hidden" class="form-control" name="id" value="<?php echo $data->idbarang ?>">
-                                                        <input type="hidden" class="form-control" name="current_stock" value="<?php echo $data->stok ?>">
+                                                        <input type="hidden" class="form-control" name="current_stock" value="<?php echo $data->stock ?>">
                                                         <label class="text-white buy-title">Tambah Stok:</label>
                                                         <input type="number" class="form-control buy-input" name="add_stock">
                                                     </div>

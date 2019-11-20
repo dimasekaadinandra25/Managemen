@@ -63,11 +63,11 @@ class Product extends CI_Controller
         $this->upload->initialize($config);
 
         $image = "";
-        $nama_barang = $this->input->post('nama_barang');
-        $nama_barang = ucfirst($nama_barang);
+        $nama_barang = ucfirst($this->input->post('nama_barang'));
         $stock = $this->input->post('stock');
         $last_update = $this->input->post('last_update');
         $harga = $this->input->post('harga');
+        $harga_pcs = $harga / $stock;
 
         if (!$this->upload->do_upload('foto')) {
             $image = "no-image.png";
@@ -77,8 +77,9 @@ class Product extends CI_Controller
 
         $data = array(
             'nama_barang' => $nama_barang,
-            'stok' => $stock,
-            'harga' => $harga,
+            'harga_beli' => $harga,
+            'stock' => $stock,
+            'harga_beli_pcs' => $harga_pcs,
             'foto_barang' => $image,
             'last_update' => $last_update
         );
@@ -91,19 +92,24 @@ class Product extends CI_Controller
     public function ubah()
     {
         $id = $this->input->post('id');
-        $harga = $this->input->post('harga');
+        $harga = $this->input->post('harga_jual');
         $tanggal = $this->input->post('last_update');
-        $data = array(
-            'harga' => $harga,
-            'last_update' => $tanggal
-        );
+        if ($harga == 0 || $harga == '') {
+            $this->session->set_flashdata('error', 'Data tidak Valid');
+            redirect('product/');
+        } else {
+            $data = array(
+                'harga_jual_pcs' => $harga,
+                'last_update' => $tanggal
+            );
 
-        $where = array(
-            'idbarang' => $id
-        );
+            $where = array(
+                'idbarang' => $id
+            );
 
-        $this->Mproduct->editData($data, $where);
-        $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
-        redirect('product/');
+            $this->Mproduct->editData($data, $where);
+            $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
+            redirect('product/');
+        }
     }
 }

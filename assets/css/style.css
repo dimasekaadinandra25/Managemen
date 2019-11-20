@@ -17,8 +17,7 @@
 
 .sidebar{
     height: 100%;
-    min-width: 350px;
-    max-width: 350px;
+    width: 350px;
     overflow: auto;
     background-color:  #581E1E;
     position: fixed;
@@ -76,6 +75,7 @@
     background-color: #581E1E;
 } */
 
+
 .bar-item{
     width:100%;
     display:block;
@@ -91,7 +91,7 @@
 .navbar{
     position: relative;
     padding-top: 3%;
-    background-color: whitesmoke;
+    background-color: rgb(150, 68, 68);
     padding-bottom: 3%;
 }
 
@@ -112,13 +112,13 @@
 .title .title_toko{
     font-size: 25px;
     text-transform: uppercase;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 .title .jalan{
     font-size: 15px;
-    color: red;
+    color: white;
 }
 
 p{
@@ -199,10 +199,21 @@ p{
     border: 2px solid #FFC312;
 }
 
-.div1 {
-    width: 35px;
-    height: 35px;
-    border: 1px solid blue;
+.data-barang{
+    border: 1px solid #a3a2a2;
+    box-shadow: 0 1px 2px 1px #a3a2a2;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.data-barang .product-bottom{
+    margin-top: 5px;
+}
+
+.data-barang .product-bottom p .div1 {
+    border: 2px solid #4052db;
+    border-radius: 5px;
+    padding: 2px;
   }
 
 @media (max-width: 650px){
@@ -212,5 +223,11 @@ p{
     
     .title .jalan{
         font-size: 13px;
+    }
+}
+
+@media (max-width: 400px){
+    .sidebar{
+        width: 290px;
     }
 }

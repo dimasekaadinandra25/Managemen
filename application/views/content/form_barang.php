@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-6 border-whitesmoke mt-5">
+            <div class="col-sm-6 border-whitesmoke mt-5 card-barang">
                 <form action="<?= site_url('product/tambah') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group ">
                         <div class="row text-center">
@@ -96,7 +96,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-3">
-                                <label class="mt-2">Harga</label>
+                                <label class="mt-2">Harga Beli</label>
                             </div>
                             <div class="col-sm">
                                 <input type="hidden" class="form-control" name="last_update" value="<?= $tanggal ?>">

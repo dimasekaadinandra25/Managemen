@@ -24,10 +24,9 @@
 
 .sidebar{
     height: 100%;
-    min-width: 350px;
-    max-width: 350px;
+    width: 350px;
     overflow: auto;
-    background-color: black;
+    background-color:  #581E1E;
     position: fixed;
     z-index: 999;
     display: none;
@@ -75,7 +74,7 @@
 
 .navbar{
     position: relative;
-    background-color: whitesmoke;
+    background-color: rgb(150, 68, 68);
 }
 
 .navbar .bars{
@@ -89,12 +88,12 @@
     text-align: center;
     width: 100%;
     padding-top: 20px;
-    background-color: whitesmoke;
+    background-color: rgb(150, 68, 68);
 }
 
 .title .title_toko{
     text-transform: uppercase;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -198,7 +197,7 @@
     color: rgb(10, 167, 230);
 }
 
-@media (max-width: 380px){
+@media (max-width: 300px){
     .footer .content-1,
     .footer .content-2{
         width: 100%;
@@ -206,5 +205,11 @@
 
     .footer .content-2{
         float: left;
+    }
+}
+
+@media (max-width: 400px){
+    .sidebar{
+        width: 290px;
     }
 }

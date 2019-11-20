@@ -54,7 +54,10 @@ class Profit extends CI_Controller
         $sold = $this->input->post('sold_stock');
         $current_time = date_now();
 
-        if ($sold > $current_stock) {
+        if ($sold == 0 || $sold == '') {
+            $this->session->set_flashdata('error', 'Silakan Cek Form Kembali');
+            redirect('profit/');
+        } else if ($sold > $current_stock) {
             $this->session->set_flashdata('error', 'Stok Tidak Mencukupi');
             redirect('profit/');
         } else {
@@ -66,7 +69,7 @@ class Profit extends CI_Controller
             );
 
             $data_barang = array(
-                'stok' => $stock
+                'stock' => $stock
             );
 
             $where = array(
@@ -91,27 +94,52 @@ class Profit extends CI_Controller
             $id = $this->input->post('id');
             $current_stock = $this->input->post('current_stock');
             $add = $this->input->post('add_stock');
+            $harga_beli = $this->input->post('harga_beli');
             $current_time = date_now();
             $stock = $current_stock + $add;
 
-            $data_pembelian = array(
-                'id_barang' => $id,
-                'date_pembelian' => $current_time,
-                'stock_pembelian' => $add
-            );
+            if ($harga_beli == '' || $harga_beli == 0) {
+                $data_pembelian = array(
+                    'id_barang' => $id,
+                    'date_pembelian' => $current_time,
+                    'stock_pembelian' => $add
+                );
 
-            $data_barang = array(
-                'stok' => $stock
-            );
+                $data_barang = array(
+                    'stock' => $stock
+                );
 
-            $where = array(
-                'idbarang' => $id
-            );
+                $where = array(
+                    'idbarang' => $id
+                );
 
-            $this->Mproduct->editData($data_barang, $where);
-            $this->Mprofit->addDataPembelian($data_pembelian);
-            $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
-            redirect('profit/');
+                $this->Mproduct->editData($data_barang, $where);
+                $this->Mprofit->addDataPembelian($data_pembelian);
+                $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
+                redirect('profit/');
+            } else {
+                $update_harga =  round($harga_beli / $add);
+                $data_pembelian = array(
+                    'id_barang' => $id,
+                    'date_pembelian' => $current_time,
+                    'stock_pembelian' => $add
+                );
+
+                $data_barang = array(
+                    'harga_beli' => $harga_beli,
+                    'stock' => $stock,
+                    'harga_beli_pcs' => $update_harga
+                );
+
+                $where = array(
+                    'idbarang' => $id
+                );
+
+                $this->Mproduct->editData($data_barang, $where);
+                $this->Mprofit->addDataPembelian($data_pembelian);
+                $this->session->set_flashdata('pesan', 'Data Berhasil Diubah');
+                redirect('profit/');
+            }
         }
     }
 }

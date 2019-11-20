@@ -40,7 +40,7 @@ class Graphic extends CI_Controller
         $total_all = 0;
         $data = $this->Mprint->get_penjualan($month);
         foreach ($data->result() as $data_penjualan) {
-            $total = $data_penjualan->stock_penjualan * $data_penjualan->harga;
+            $total = $data_penjualan->stock_penjualan * $data_penjualan->harga_jual_pcs;
             $total_all = $total_all + $total;
         }
         return $total_all;
@@ -52,7 +52,7 @@ class Graphic extends CI_Controller
         $total_all = 0;
         $data = $this->Mprint->get_pembelian($month);
         foreach ($data->result() as $data_pembelian) {
-            $total = $data_pembelian->stock_pembelian * $data_pembelian->harga;
+            $total = $data_pembelian->stock_pembelian * $data_pembelian->harga_beli_pcs;
             $total_all = $total_all + $total;
         }
         return $total_all;

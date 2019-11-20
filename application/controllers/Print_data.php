@@ -42,7 +42,7 @@ class Print_data extends CI_Controller
             $pdf->SetFont('Arial', '', 10);
             $data = $this->Mprint->get_penjualan($data_bulan);
             foreach ($data->result() as $data_penjualan) {
-                $total = $data_penjualan->stock_penjualan * $data_penjualan->harga;
+                $total = $data_penjualan->stock_penjualan * $data_penjualan->harga_jual_pcs;
                 $total_all = $total_all + $total;
                 $pdf->Cell(20, 6, $count++, 1, 0);
                 $pdf->Cell(40, 6, $data_penjualan->date_penjualan, 1, 0);
@@ -75,7 +75,7 @@ class Print_data extends CI_Controller
             $pdf->SetFont('Arial', '', 10);
             $data = $this->Mprint->get_pembelian($data_bulan);
             foreach ($data->result() as $data_pembelian) {
-                $total = $data_pembelian->stock_pembelian * $data_pembelian->harga;
+                $total = $data_pembelian->stock_pembelian * $data_pembelian->harga_beli_pcs;
                 $total_all = $total_all + $total;
                 $pdf->Cell(20, 6, $count++, 1, 0);
                 $pdf->Cell(40, 6, $data_pembelian->date_pembelian, 1, 0);
@@ -107,8 +107,8 @@ class Print_data extends CI_Controller
             $pdf->SetFont('Arial', '', 10);
             $data = $this->Mprint->get_laba($data_bulan);
             foreach ($data->result() as $data_laba) {
-                $total_pembelian = $data_laba->st_beli * $data_laba->harga;
-                $total_penjualan = $data_laba->st_jual * $data_laba->harga;
+                $total_pembelian = $data_laba->st_beli * $data_laba->harga_beli_pcs;
+                $total_penjualan = $data_laba->st_jual * $data_laba->harga_jual_pcs;
                 $total_all_pembelian = $total_all_pembelian + $total_pembelian;
                 $total_all_penjualan = $total_all_penjualan + $total_penjualan;
                 $pdf->Cell(20, 6, $count++, 1, 0);

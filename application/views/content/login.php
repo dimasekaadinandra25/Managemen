@@ -6,15 +6,12 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <i class="fas fa-times-circle" onclick="goBack()"></i>
-    </div>
-
     <div class="container">
         <div class="row align-items-center">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="card">
+                    <a href="<?= base_url() ?>"><i class="fas fa-arrow-left text-white text-20"></i></a>
                     <form action="<?= base_url('login/auth') ?>" method="POST">
                         <div class="form-group">
                             <div class="title">

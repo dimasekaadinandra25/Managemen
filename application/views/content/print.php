@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -106,7 +106,7 @@
                                 <th class="cl-1">no</th>
                                 <th class="cl-2">Bulan</th>
                                 <th class="cl-3">Products</th>
-                                <th class="cl-4">Qty</th>
+                                <th class="cl-4">Stock</th>
                                 <th class="cl-5">Value</th>
                             </tr>
                         </thead>
@@ -127,7 +127,7 @@
                                 <th class="cl-1">no</th>
                                 <th class="cl-2">Bulan</th>
                                 <th class="cl-3">Products</th>
-                                <th class="cl-4">Qty</th>
+                                <th class="cl-4">Stock</th>
                                 <th class="cl-5">Value</th>
                             </tr>
                         </thead>
@@ -187,7 +187,7 @@
                         var total_all = '';
                         var sub = '';
                         for (i = 0; i < data.length; i++) {
-                            total = data[i].stock_penjualan * data[i].harga;
+                            total = data[i].stock_penjualan * data[i].harga_jual_pcs;
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
                                 '<td class="cl-1">' + count++ + '</td>' +
@@ -240,7 +240,7 @@
                         var total_all = '';
                         var sub = '';
                         for (i = 0; i < data.length; i++) {
-                            total = data[i].stock_pembelian * data[i].harga;
+                            total = data[i].stock_pembelian * data[i].harga_beli_pcs;
                             total_all = parseInt(total_all + total);
                             html += '<tr>' +
                                 '<td class="cl-1">' + count++ + '</td>' +
@@ -294,8 +294,8 @@
                         var sub = '';
                         var laba = '';
                         for (i = 0; i < data.length; i++) {
-                            total_pembelian = data[i].st_beli * data[i].harga;
-                            total_penjualan = data[i].st_jual * data[i].harga;
+                            total_pembelian = data[i].st_beli * data[i].harga_beli_pcs;
+                            total_penjualan = data[i].st_jual * data[i].harga_jual_pcs;
                             total_all_pembelian = parseInt(total_all_pembelian + total_pembelian);
                             total_all_penjualan = parseInt(total_all_penjualan + total_penjualan);
                             laba = parseInt(total_all_penjualan - total_all_pembelian);

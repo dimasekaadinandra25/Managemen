@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-sm-3"></div>
-            <div class="col-sm-6 border-whitesmoke">
+            <div class="col-sm-6 border-whitesmoke card-profile">
                 <div class="box-header">
                     <a href="#" id="link-gambar" class="active">Ubah Foto</a>
                     <a href="#" id="link-password">Ubah Password</a>

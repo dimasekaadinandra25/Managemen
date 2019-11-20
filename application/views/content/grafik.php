@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -103,7 +103,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-sm-6">
                 <div id="chartPembelian"></div>
             </div>

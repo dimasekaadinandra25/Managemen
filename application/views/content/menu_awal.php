@@ -28,7 +28,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -51,24 +51,25 @@
             <div class="col-sm-3"></div>
         </div>
     </div>
-
-    <div class="container-fluid">
+    <div class="container">
         <div class="row mb-80">
             <?php foreach ($data->result() as $databarang) : ?>
                 <div class="col-md-3 my-4">
-                    <div class="product-top text-center">
-                        <img src="<?php echo base_url("assets/img/foto-barang/$databarang->foto_barang") ?>" width='180px' height='180px'>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <p class="size-20"><?php echo $databarang->nama_barang ?> <float class="div1"><?php echo $databarang->stok ?></float>
-                        </p>
-                        <?php
-                            if ($databarang->stok == 0) {
-                                ?>
-                            <h5 class="text-danger">Sold Out</h5>
-                        <?php } else { ?>
-                            <h5>Rp. <?php echo number_format($databarang->harga) ?></h5>
-                        <?php } ?>
+                    <div class="data-barang">
+                        <div class="product-top text-center">
+                            <img src="<?php echo base_url("assets/img/foto-barang/$databarang->foto_barang") ?>" width='180px' height='180px'>
+                        </div>
+                        <div class="product-bottom text-center">
+                            <p class="size-20"><?php echo $databarang->nama_barang ?> <float class="div1"><?php echo $databarang->stock ?></float>
+                            </p>
+                            <?php
+                                if ($databarang->stock == 0 || $databarang->harga_jual_pcs == 0) {
+                                    ?>
+                                <h5 class="text-danger">Sold Out</h5>
+                            <?php } else { ?>
+                                <h5>Rp. <?php echo number_format($databarang->harga_jual_pcs) ?></h5>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>

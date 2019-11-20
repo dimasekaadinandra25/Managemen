@@ -54,7 +54,7 @@
     <div class="overlay" onclick="close_navbar()" style="cursor:pointer" id="myOverlay"></div>
     <div class="navbar">
         <span class="bars" id="bars">
-            <i class="fas fa-bars" onclick="open_navbar()"></i>
+            <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
             <p class="title_toko">toko bunga cengkeh</p>
@@ -79,6 +79,11 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-sm text-center text-danger text-18">
+                <?= @$this->session->flashdata('error') ?>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm text-center text-green text-18">
                 <?= @$this->session->flashdata('pesan') ?>
             </div>
@@ -93,8 +98,10 @@
                             <tr class="bg-secondary text-white">
                                 <th class="column-1">No</th>
                                 <th class="column-2">Product</th>
-                                <th class="column-3">Qty</th>
-                                <th class="column-4">Harga</th>
+                                <th class="column-4">Stock</th>
+                                <th class="column-4">Harga Beli</th>
+                                <th class="column-4">Harga PCS</th>
+                                <th class="column-4">Harga Jual</th>
                                 <th class="column-5">Terakhir Diubah</th>
                                 <th class="column-6">Gambar</th>
                                 <th class="column-7">Action</th>
@@ -108,8 +115,14 @@
                                 <tr>
                                     <td class="column-1"><?php echo $count++ ?></td>
                                     <td class="column-2"><?php echo $databarang->nama_barang ?></td>
-                                    <td class="column-3"><?php echo $databarang->stok ?></td>
-                                    <td class="column-4">Rp. <?php echo number_format($databarang->harga) ?></td>
+                                    <td class="column-4"><?php echo $databarang->stock ?></td>
+                                    <td class="column-4">Rp. <?php echo number_format($databarang->harga_beli) ?></td>
+                                    <td class="column-4">Rp. <?php echo number_format($databarang->harga_beli_pcs) ?></td>
+                                    <?php if ($databarang->harga_jual_pcs > 0) { ?>
+                                        <td class="column-4">Rp. <?php echo number_format($databarang->harga_jual_pcs) ?></td>
+                                    <?php } else { ?>
+                                        <td class="column-4">Rp. <?php echo ($databarang->harga_jual_pcs) ?></td>
+                                    <?php } ?>
                                     <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
                                     <td class="column-6"><?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?></td>
                                     <td class="column-7"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
@@ -122,7 +135,7 @@
                                                     product
                                                 </div>
                                                 <div class="modal-image">
-                                                    <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?>
+                                                    <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='50' height='50'>" ?>
                                                 </div>
                                                 <form action="<?= site_url('product/ubah') ?>" method="post">
                                                     <div class="form-group mt-3">
@@ -131,12 +144,24 @@
                                                         <input type="text" class="form-control" value="<?php echo $databarang->nama_barang ?>" autocomplete="off" disabled>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="text-white">Qty</label>
-                                                        <input type="text" class="form-control" value="<?php echo $databarang->stok ?>" autocomplete="off" disabled>
+                                                        <label class="text-white">Stock</label>
+                                                        <input type="text" class="form-control" value="<?php echo $databarang->stock ?>" autocomplete="off" disabled>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="text-white">Price</label>
-                                                        <input type="text" class="form-control" name="harga" placeholder="Rp <?php echo number_format($databarang->harga) ?>" autocomplete="off">
+                                                        <label class="text-white">Harga Beli</label>
+                                                        <input type="text" class="form-control" value="Rp. <?php echo number_format($databarang->harga_beli) ?>" autocomplete="off" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Harga PCS</label>
+                                                        <input type="text" class="form-control" value="Rp. <?php echo number_format($databarang->harga_beli_pcs) ?>" autocomplete="off" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Harga Jual</label>
+                                                        <?php if ($databarang->harga_jual_pcs > 0) { ?>
+                                                            <input type="text" class="form-control" name="harga_jual" placeholder="Rp. <?php echo number_format($databarang->harga_jual_pcs) ?>" autocomplete="off">
+                                                        <?php } else { ?>
+                                                            <input type="text" class="form-control" name="harga_jual" placeholder="Rp <?php echo $databarang->harga_jual_pcs ?>" autocomplete="off">
+                                                        <?php } ?>
                                                         <input type="hidden" class="form-control" name="last_update" value="<?= $tanggal ?>">
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
@@ -152,7 +177,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-50">
+        <div class="row mb-50 page">
             <div class="col">
                 <?= $pagination ?>
             </div>

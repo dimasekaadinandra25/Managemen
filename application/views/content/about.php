@@ -7,7 +7,7 @@
 
 <body>
     <div class="Navbar">
-        <i class="fas fa-times-circle" onclick="goBack()"></i>
+        <a class="text-secondary" href="<?= base_url() ?>"><i class="fas fa-times-circle"></i></a>
     </div>
     <div class="aboutme">
         <h2>ABOUT ME</h2>
