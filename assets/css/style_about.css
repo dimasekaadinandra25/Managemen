@@ -19,17 +19,7 @@
 }
 
 * {
-    background-color: #603838;
-}
-
-.footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(92, 25, 25);
-    width: 100%;
-    color: white;
-    box-sizing: border-box;
+    background-color: #2460A7FF;
 }
 
 *{
@@ -41,7 +31,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgb(92, 25, 25);
+    background-color:#D9B48FFF;
     width: 100%;
     color: white;
     box-sizing: border-box;
@@ -50,18 +40,18 @@
 .footer .content-1{
     float: left;
     margin: 10px 15px;
-    background-color: rgb(92, 25, 25);
+    background-color: #D9B48FFF;
 }
 
 .footer .content-2{
-    background-color: rgb(92, 25, 25);
+    background-color: #D9B48FFF;
     float: right;
     padding-right: 20px;
     margin: 10px 10px;
 }
 
 .footer .content-2 .fab{
-    background-color: rgb(92, 25, 25);
+    background-color:#D9B48FFF;
     padding-left: 10px;
     font-size: 23px;
 }

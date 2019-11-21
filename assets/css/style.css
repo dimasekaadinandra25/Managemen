@@ -1,6 +1,10 @@
 *{
     font-family: 'Times New Roman', Times, serif;
 }
+/* 
+body {
+    background-color: #B3C7D6FF;
+} */
 
 .overlay{
     position:fixed;
@@ -19,7 +23,7 @@
     height: 100%;
     width: 350px;
     overflow: auto;
-    background-color:  #581E1E;
+    background-color:#0063B2FF;
     position: fixed;
     z-index: 999;
     display: none;
@@ -91,7 +95,7 @@
 .navbar{
     position: relative;
     padding-top: 3%;
-    background-color: rgb(150, 68, 68);
+    background-color: #2460A7FF;
     padding-bottom: 3%;
 }
 
@@ -110,7 +114,7 @@
 }
 
 .title .title_toko{
-    font-size: 25px;
+    font-size: 30px;
     text-transform: uppercase;
     color: white;
     font-weight: bold;
@@ -118,7 +122,7 @@
 
 .title .jalan{
     font-size: 15px;
-    color: white;
+    color: #F99FC9FF;
 }
 
 p{
@@ -133,7 +137,7 @@ p{
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgb(92, 25, 25);
+    background-color: #D9B48FFF;
     width: 100%;
     color: white;
     box-sizing: border-box;
@@ -211,7 +215,7 @@ p{
 }
 
 .data-barang .product-bottom p .div1 {
-    border: 2px solid #4052db;
+    border: 2px solid #2e398b;
     border-radius: 5px;
     padding: 2px;
   }
