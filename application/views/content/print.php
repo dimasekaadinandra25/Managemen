@@ -34,7 +34,7 @@
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('profit') ?>">
-                        <p><i class="fas fa-money-bill-wave pr-4"></i>PROFIT <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
+                        <p><i class="fas fa-money-bill-wave pr-4"></i>OMSET <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
                     </a>
                 </div>
             </div>

@@ -34,7 +34,7 @@
             <div class="row size-20">
                 <div class="col-sm-12">
                     <a href="<?= site_url('profit') ?>">
-                        <p><i class="fas fa-money-bill-wave pr-4"></i>PROFIT <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
+                        <p><i class="fas fa-money-bill-wave pr-4"></i>OMSET <i class="fas fa-chevron-right  ml-5 pl-4"></i></p>
                     </a>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                                     <?php } ?>
                                     <td class="column-5"><?php echo date('d-m-Y', strtotime($databarang->last_update)) ?></td>
                                     <td class="column-6"><?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='100' height='100'>" ?></td>
-                                    <td class="column-7"><i class="fas fa-share-square" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
+                                    <td class="column-7"><i class="fas fa-edit" data-toggle="modal" data-target="#editBarang-<?= $databarang->idbarang ?>"></i></td>
                                 </tr>
                                 <div class="modal fade" id="EditBarang-<?= $databarang->idbarang ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
