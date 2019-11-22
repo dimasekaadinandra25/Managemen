@@ -120,6 +120,11 @@ body {
     font-weight: bold;
 }
 
+.title a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .title .jalan{
     font-size: 15px;
     color: #F99FC9FF;
@@ -139,8 +144,12 @@ p{
     left: 0;
     background-color: #D9B48FFF;
     width: 100%;
-    color: white;
+    color: rgb(0, 0, 0);
     box-sizing: border-box;
+}
+
+.text-25{
+    font-size: 25px;
 }
 
 .footer .content-1{

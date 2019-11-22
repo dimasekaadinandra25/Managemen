@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Nov 2019 pada 16.11
--- Versi server: 10.1.36-MariaDB
--- Versi PHP: 7.2.10
+-- Generation Time: Nov 22, 2019 at 03:04 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE `barang` (
@@ -34,26 +34,15 @@ CREATE TABLE `barang` (
   `harga_beli` varchar(255) NOT NULL,
   `stock` int(11) NOT NULL,
   `harga_beli_pcs` varchar(255) NOT NULL,
-  `harga_jual_pcs` varchar(255) NOT NULL,
+  `harga_jual_pcs` varchar(255) NOT NULL DEFAULT '0',
   `foto_barang` varchar(255) NOT NULL,
   `last_update` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `barang`
---
-
-INSERT INTO `barang` (`idbarang`, `nama_barang`, `harga_beli`, `stock`, `harga_beli_pcs`, `harga_jual_pcs`, `foto_barang`, `last_update`) VALUES
-(4, 'Aqua botol 600ml', '2500', 14, '178.57142857143', '3000', 'Aqua.jpg', '2019-11-21'),
-(5, 'Tango Long 130gr', '5000', 10, '500', '6000', 'Tcoklat.jpg', '2019-11-21'),
-(6, 'Tango Long 130gr', '5000', 10, '500', '6000', 'Tputih.jpg', '2019-11-21'),
-(7, 'Lifebuoy Shampo 70Ml', '8000', 4, '2000', '8500', 'Life.jpg', '2019-11-21'),
-(8, 'Cussons Baby 350gr', '19500', 1, '19500', '', 'Bedak1.jpg', '2019-11-21');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembelian`
+-- Table structure for table `pembelian`
 --
 
 CREATE TABLE `pembelian` (
@@ -66,7 +55,7 @@ CREATE TABLE `pembelian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan`
+-- Table structure for table `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -79,7 +68,7 @@ CREATE TABLE `penjualan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -91,82 +80,82 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `password`, `gambar`) VALUES
-(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'ibu_camelia.jpg');
+(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'AMNESIA-chibi-33812382-1920-1200.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `barang`
+-- Indexes for table `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`idbarang`);
 
 --
--- Indeks untuk tabel `pembelian`
+-- Indexes for table `pembelian`
 --
 ALTER TABLE `pembelian`
   ADD PRIMARY KEY (`idpembelian`),
   ADD KEY `id_barang` (`id_barang`);
 
 --
--- Indeks untuk tabel `penjualan`
+-- Indexes for table `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`idpenjualan`),
   ADD KEY `id_barang` (`id_barang`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`iduser`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `barang`
+-- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `pembelian`
+-- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `penjualan`
+-- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `pembelian`
+-- Constraints for table `pembelian`
 --
 ALTER TABLE `pembelian`
   ADD CONSTRAINT `pembelian_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`idbarang`);
 
 --
--- Ketidakleluasaan untuk tabel `penjualan`
+-- Constraints for table `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD CONSTRAINT `penjualan_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`idbarang`);

@@ -31,7 +31,9 @@
             <i class="fas fa-bars text-white" onclick="open_navbar()"></i>
         </span>
         <span class="title">
-            <p class="title_toko">toko bunga cengkeh</p>
+            <a href="<?= base_url() ?>">
+                <p class="title_toko">toko bunga cengkeh</p>
+            </a>
             <p class="jalan">Jl. Cengkeh No.52,Tulusrejo, Kec. Lowokwaru,<br> Kota Malang, Jawa Timur 65141</p>
         </span>
     </div>
@@ -52,6 +54,11 @@
         </div>
     </div>
     <div class="container">
+        <div class="row">
+            <div class="col-sm text-center text-danger text-25">
+                <?= @$error ?>
+            </div>
+        </div>
         <div class="row mb-80">
             <?php foreach ($data->result() as $databarang) : ?>
                 <div class="col-md-3 my-4">

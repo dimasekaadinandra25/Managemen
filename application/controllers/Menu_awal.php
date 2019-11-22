@@ -12,7 +12,7 @@ class Menu_awal extends CI_Controller
     {
         $config['base_url'] = site_url('menu_awal/index/');
         $config['total_rows'] = $this->db->count_all('barang');
-        $config['per_page'] = 20;
+        $config['per_page'] = 8;
         $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -48,7 +48,7 @@ class Menu_awal extends CI_Controller
         $keyword = $this->input->post('search');
         $config['base_url'] = site_url('menu_awal/index/');
         $config['total_rows'] = $this->db->count_all('barang');
-        $config['per_page'] = 20;
+        $config['per_page'] = 8;
         $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -74,8 +74,15 @@ class Menu_awal extends CI_Controller
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $data['data'] = $this->Mawal->get_search($keyword, $config["per_page"], $data['page']);
         $data['pagination'] = $this->pagination->create_links();
-        $this->load->view('header');
-        $this->load->view('content/menu_awal', $data);
-        $this->load->view('footer');
+        if ($data['data']->num_rows() > 0) {
+            $this->load->view('header');
+            $this->load->view('content/menu_awal', $data);
+            $this->load->view('footer');
+        } else {
+            $data['error'] = 'Barang yang Dicari Tidak Ada!';
+            $this->load->view('header');
+            $this->load->view('content/menu_awal', $data);
+            $this->load->view('footer');
+        }
     }
 }
