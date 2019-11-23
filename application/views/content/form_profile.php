@@ -7,7 +7,7 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/foto-profil/<?= $this->session->userdata('foto') ?>" class="rounded-circle" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
             <div class="row size-20 mt-5">
@@ -70,17 +70,13 @@
                 </div>
                 <form action="<?= base_url('edit_profile/update_gambar') ?>" method="post" enctype="multipart/form-data" class="mt-4 form-gambar">
                     <h6 class="text-center text-green pb-4"><?= @$success_gambar ?></h6>
-                    <img src="<?= base_url(); ?>/assets/img/<?= $this->session->userdata('foto'); ?>" class="foto-profil">
-                    <div class="form-group mt-5 text-center">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="mt-2">Foto</label>
-                            </div>
-                            <div class="col-sm">
-                                <input type="hidden" name="id" value="<?= $this->session->userdata('id') ?>">
-                                <input type="hidden" class="form-control" name="nama" value="<?= $this->session->userdata('nama') ?>">
-                                <input type="file" class="form-control-file" name="foto">
-                            </div>
+                    <img src="<?= base_url(); ?>/assets/img/foto-profil/<?= $this->session->userdata('foto'); ?>" class="foto-profil">
+                    <div class="form-group mt-5">
+                        <div class="custom-file">
+                            <input type="hidden" name="id" value="<?= $this->session->userdata('id') ?>">
+                            <input type="hidden" class="form-control" name="nama" value="<?= $this->session->userdata('nama') ?>">
+                            <input type="file" class="custom-file-input" id="customFile" name="foto">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -124,6 +120,12 @@
                 $("#link-gambar").addClass("active");
                 $("#link-password").removeClass("active");
             });
+        });
+    </script>
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
     </script>
 </body>

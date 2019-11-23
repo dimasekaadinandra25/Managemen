@@ -7,7 +7,7 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/foto-profil/<?= $this->session->userdata('foto') ?>" class="rounded-circle" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
             <div class="row size-20 mt-5">
@@ -110,7 +110,10 @@
                                 <label class="mt-2">Foto Barang</label>
                             </div>
                             <div class="col-sm">
-                                <input type="file" class="form-control-file" name="foto">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="foto">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,6 +125,12 @@
             <div class="col-sm-3"></div>
         </div>
     </div>
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
 </body>
 

@@ -7,7 +7,7 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/foto-profil/<?= $this->session->userdata('foto') ?>" class="rounded-circle" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
             <div class="row size-20 mt-5">

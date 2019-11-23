@@ -7,7 +7,7 @@
 
 <body>
     <div class="sidebar" id="mySidebar">
-        <img src="<?php echo base_url() ?>assets/img/<?= $this->session->userdata('foto') ?>" alt="foto profil">
+        <img src="<?php echo base_url() ?>assets/img/foto-profil/<?= $this->session->userdata('foto') ?>" class="rounded-circle" alt="foto profil">
         <p class="text-centered mt-3 text-white size-20"><?= $this->session->userdata('nama') ?></p>
         <div class="container">
             <div class="row size-20 mt-5">
@@ -137,11 +137,11 @@
                                                 <div class="modal-image">
                                                     <?php echo "<img src='" . base_url("assets/img/foto-barang/" . $databarang->foto_barang) . "' width='50' height='50'>" ?>
                                                 </div>
-                                                <form action="<?= site_url('product/ubah') ?>" method="post">
+                                                <form action="<?= site_url('product/ubah') ?>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group mt-3">
                                                         <label class="text-white">Name Product</label>
                                                         <input type="hidden" class="form-control" name="id" value="<?php echo $databarang->idbarang ?>">
-                                                        <input type="text" class="form-control" value="<?php echo $databarang->nama_barang ?>" autocomplete="off" disabled>
+                                                        <input type="text" class="form-control" name="nama" value="<?php echo $databarang->nama_barang ?>" autocomplete="off">
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="text-white">Stock</label>
@@ -158,11 +158,22 @@
                                                     <div class="form-group">
                                                         <label class="text-white">Harga Jual</label>
                                                         <?php if ($databarang->harga_jual_pcs > 0) { ?>
-                                                            <input type="text" class="form-control" name="harga_jual" placeholder="Rp. <?php echo number_format($databarang->harga_jual_pcs) ?>" autocomplete="off">
+                                                            <input type="number" class="form-control" name="harga_jual" placeholder="Rp. <?php echo number_format($databarang->harga_jual_pcs) ?>" autocomplete="off">
                                                         <?php } else { ?>
-                                                            <input type="text" class="form-control" name="harga_jual" placeholder="Rp <?php echo $databarang->harga_jual_pcs ?>" autocomplete="off">
+                                                            <input type="number" class="form-control" name="harga_jual" placeholder="Rp <?php echo $databarang->harga_jual_pcs ?>" autocomplete="off">
                                                         <?php } ?>
                                                         <input type="hidden" class="form-control" name="last_update" value="<?= $tanggal ?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Terakhir Diubah</label>
+                                                        <input type="text" class="form-control" value="<?php echo $databarang->last_update ?>" autocomplete="off" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-white">Ubah Foto Barang</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="customFile" name="foto">
+                                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                                        </div>
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                                 </form>
@@ -202,6 +213,12 @@
                 }
             }
         }
+    </script>
+    <script>
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
     </script>
     <script src="<?= base_url('assets/js/') ?>javascript.js"></script>
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2019 at 03:04 PM
+-- Generation Time: Nov 23, 2019 at 02:37 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -84,7 +84,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `password`, `gambar`) VALUES
-(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'AMNESIA-chibi-33812382-1920-1200.jpg');
+(1, 'camelia', 'camelia', 'ff42e9f585aebc196b14e962d8a10989', 'no-photo.jpg');
 
 --
 -- Indexes for dumped tables
@@ -124,19 +124,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpembelian` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpenjualan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`

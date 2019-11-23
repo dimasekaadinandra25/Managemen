@@ -19,7 +19,7 @@ class Edit_profile extends CI_Controller
     }
     public function update_gambar()
     {
-        $config['upload_path']          = './assets/img/';
+        $config['upload_path']          = './assets/img/foto-profil/';
         $config['allowed_types']        = 'jpeg|jpg|png';
         $config['max_size']             = 2048;
         $this->upload->initialize($config);
@@ -29,7 +29,7 @@ class Edit_profile extends CI_Controller
         $nama = $this->input->post('nama');
 
         if (!$this->upload->do_upload('foto')) {
-            $image = "default.jpg";
+            $image = "no-photo.jpg";
         } else {
             $image =  $this->upload->file_name;
         }

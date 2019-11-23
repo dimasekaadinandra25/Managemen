@@ -55,25 +55,28 @@ class Product extends CI_Controller
         $this->load->view('footer');
     }
 
-    public function tambah()
+    public function UploadImage($data_photo)
     {
         $config['upload_path']          = './assets/img/foto-barang/';
         $config['allowed_types']        = 'jpeg|jpg|png';
         $config['max_size']             = 2048;
         $this->upload->initialize($config);
+        if (!$this->upload->do_upload('foto')) {
+            return $data_photo = "no-image.png";
+        } else {
+            return $data_photo =  $this->upload->file_name;
+        }
+    }
 
-        $image = "";
+    public function tambah()
+    {
         $nama_barang = ucfirst($this->input->post('nama_barang'));
         $stock = $this->input->post('stock');
         $last_update = $this->input->post('last_update');
         $harga = $this->input->post('harga');
         $harga_pcs = $harga / $stock;
-
-        if (!$this->upload->do_upload('foto')) {
-            $image = "no-image.png";
-        } else {
-            $image =  $this->upload->file_name;
-        }
+        $photo = $this->input->post('foto');
+        $image = $this->UploadImage($photo);
 
         $data = array(
             'nama_barang' => $nama_barang,
@@ -92,16 +95,29 @@ class Product extends CI_Controller
     public function ubah()
     {
         $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
         $harga = $this->input->post('harga_jual');
         $tanggal = $this->input->post('last_update');
+        $photo = $this->input->post('foto');
+        $image = $this->UploadImage($photo);
         if ($harga == 0 || $harga == '') {
             $this->session->set_flashdata('error', 'Data tidak Valid');
             redirect('product/');
         } else {
-            $data = array(
-                'harga_jual_pcs' => $harga,
-                'last_update' => $tanggal
-            );
+            if ($image == "no-image.png") {
+                $data = array(
+                    'nama_barang' => $nama,
+                    'harga_jual_pcs' => $harga,
+                    'last_update' => $tanggal
+                );
+            } else {
+                $data = array(
+                    'nama_barang' => $nama,
+                    'harga_jual_pcs' => $harga,
+                    'foto_barang' => $image,
+                    'last_update' => $tanggal
+                );
+            }
 
             $where = array(
                 'idbarang' => $id
