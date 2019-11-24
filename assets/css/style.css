@@ -201,6 +201,11 @@ p{
     text-align: center;
     cursor: pointer;
 }
+
+.bg-yellow{
+    background: #FFC312;
+    border: 1px solid #FFC312;
+}
   
 .input-field {
     width: 100%;

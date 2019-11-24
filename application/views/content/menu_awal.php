@@ -45,7 +45,7 @@
                     <form action="<?= site_url('menu_awal/search') ?>" method="post">
                         <div class="input-container">
                             <input type="text" name="search" class="input-field" placeholder="Type to search..." autocomplete="off">
-                            <i class="fas fa-search icon" type="submit"></i>
+                            <button type="submit" class="bg-yellow"><i class="fas fa-search icon"></i></button>
                         </div>
                     </form>
                 </div>
