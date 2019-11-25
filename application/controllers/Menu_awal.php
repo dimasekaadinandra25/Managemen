@@ -79,7 +79,7 @@ class Menu_awal extends CI_Controller
             $this->load->view('content/menu_awal', $data);
             $this->load->view('footer');
         } else {
-            $data['error'] = 'Barang yang Dicari Tidak Ada!';
+            $data['error'] = '<b>Barang yang dicari Tidak Ada!</b>';
             $this->load->view('header');
             $this->load->view('content/menu_awal', $data);
             $this->load->view('footer');

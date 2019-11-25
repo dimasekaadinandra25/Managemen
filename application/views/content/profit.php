@@ -65,7 +65,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <p class="link">Admin / Profit</p>
+                    <p class="link">Admin / Omset</p>
                     <div class="input-container">
                         <input type="text" id="myInput" onkeyup="myFunction()" class="input-field" placeholder="Type to search...">
                         <i class="fas fa-search icon"></i>
